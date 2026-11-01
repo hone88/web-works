@@ -247,6 +247,73 @@ p,ul,ol{margin:0}
 .toast.show{animation:toastIn .3s var(--ease)}
 @keyframes toastIn{from{opacity:0;transform:translate(-50%,12px)}}
 @media (min-width:980px){ .toast{display:none!important} }
+/* ===== Ver.2 ===== */
+.notice{background:#E2B33C;color:#1E140D}
+.notice__in{display:flex;align-items:center;gap:12px;padding-block:8px;font-size:var(--fs-small);flex-wrap:wrap}
+.notice__tag{background:#1E140D;color:#FFFFFF;font-size:.6875rem;font-weight:700;letter-spacing:.08em;padding:2px 8px;border-radius:2px}
+.notice__in p{flex:1;min-width:0}
+.notice__in a{color:#1E140D;font-weight:700;min-height:32px;display:inline-flex;align-items:center}
+.hero--night{background:#16100C;color:#FBF4E8;background-image:radial-gradient(circle at 78% 42%,rgba(233,160,74,.28),transparent 52%),radial-gradient(circle at 8% 0%,rgba(200,52,31,.18),transparent 40%)}
+.hero--night .sign{background:#C8341F;color:#FFF3D6}
+.hero--night h1 em{color:#FF9A6B}
+.hero--night .hero__lead{color:#E3D6C6}
+.hero--night .price{color:#FFB199}
+.hero--night .btn--primary{background:#E9A04A;color:#1A1009}
+.hero--night .btn--secondary{color:#FBF4E8;border-color:rgba(251,244,232,.75)}
+.hero--night .btn--secondary:hover{background:rgba(255,255,255,.08)}
+.hero--night .status{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.25)}
+.hero--night .status[data-state="open"]{color:#7FE0AE}
+.hero--night .status[data-state="closed"]{color:#FFC48A}
+.hero--night .facts li{background:rgba(255,255,255,.08);color:#FBF4E8}
+.hero--night .steam path{stroke:#E3D6C6}
+.hero--night .hero__bowl{box-shadow:0 0 0 10px rgba(233,160,74,.08),0 30px 60px rgba(0,0,0,.5)}
+.hero--night .hero__tag{background:#E9A04A;color:#1A1009}
+.hero--night .hero__tag .price{color:#7A1B0C}
+.for{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0}
+.for li{border:1.5px solid rgba(251,244,232,.45);border-radius:999px;padding:3px 12px;font-size:var(--fs-small);font-weight:700}
+.for li::before{content:"✓ ";color:#E9A04A}
+.memo__ref{font-size:var(--fs-xs);font-weight:700;opacity:.85;border-top:1px dashed var(--memo-line);padding-top:6px;margin-top:2px}
+.memo--dark .memo__ref{border-top-color:#E5B232}
+
+.lang{display:inline-flex;border:1.5px solid #6E655C;border-radius:999px;overflow:hidden}
+.lang button{font:inherit;font-size:.75rem;font-weight:700;min-height:32px;min-width:44px;padding:0 10px;border:0;background:transparent;color:#D9CFC2;cursor:pointer}
+.lang button[aria-pressed="true"]{background:#F4EDE2;color:#1E140D}
+
+.owner{display:grid;gap:clamp(24px,4vw,48px);align-items:center}
+@media (min-width:800px){ .owner{grid-template-columns:minmax(0,.55fr) minmax(0,1.45fr)} }
+.owner figure{margin:0;display:grid;gap:8px;justify-items:center}
+.owner svg{width:min(220px,56vw);height:auto}
+.owner figcaption{font-size:var(--fs-xs);color:var(--muted)}
+.owner__body{display:grid;gap:14px;max-width:40em;min-width:0;justify-items:start}
+.owner__quote{font-family:var(--font-sign);font-size:clamp(1.3rem,1.1rem + 1vw,1.8rem);line-height:1.5}
+.owner__sign{font-weight:700;color:var(--muted);font-size:var(--fs-small)}
+
+.vote{display:grid;gap:clamp(24px,4vw,48px)}
+@media (min-width:900px){ .vote{grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);align-items:center} }
+.vote__list{list-style:none;padding:0;display:grid;gap:12px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);padding:var(--card-pad)}
+.vote__list li{display:grid;grid-template-columns:2.2em minmax(0,1fr) auto;gap:4px 10px;align-items:center}
+.vote__rank{font-family:var(--font-sign);font-size:1.2rem;color:var(--shu)}
+.vote__name{font-weight:900}
+.vote__pct{font-variant-numeric:tabular-nums;font-weight:700;color:var(--muted);font-size:var(--fs-small)}
+.vote__bar{grid-column:2/-1;height:10px;border-radius:999px;background:var(--surface-2);overflow:hidden}
+.vote__bar i{display:block;height:100%;width:var(--v);background:var(--amber-soft);border-radius:999px}
+.vote__list li:first-child .vote__bar i{background:var(--shu)}
+
+.news{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);padding:var(--card-pad);display:grid;gap:14px;min-width:0}
+.news__head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.news__head h3{font-size:var(--fs-h3)}
+.news__filter{display:flex;gap:6px;flex-wrap:wrap}
+.news__filter button{font:inherit;font-size:var(--fs-xs);font-weight:700;min-height:36px;padding:0 12px;border-radius:999px;border:1.5px solid var(--border);background:var(--surface);color:var(--fg);cursor:pointer}
+.news__filter button[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.news__list{list-style:none;padding:0;display:grid}
+.news__list li{display:grid;grid-template-columns:auto auto minmax(0,1fr);gap:10px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--border);font-size:var(--fs-small)}
+.news__list time{font-variant-numeric:tabular-nums;color:var(--muted);font-weight:700}
+.news__cat{font-size:.6875rem;font-weight:700;padding:1px 8px;border-radius:2px;background:var(--surface-2);white-space:nowrap}
+
+.en{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);padding:var(--card-pad);display:grid;gap:10px;margin-top:20px}
+.en h3{font-size:var(--fs-body);display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.en h3 span{font-size:.6875rem;border:1.5px solid currentColor;border-radius:999px;padding:0 8px;color:var(--amber)}
+.en ol{padding-left:1.3em;display:grid;gap:4px;font-size:var(--fs-small)}
 /* reasons */
 .reasons{display:grid;gap:var(--gap)}
 @media (min-width:900px){ .reasons{grid-template-columns:repeat(3,minmax(0,1fr))} }
@@ -405,6 +472,7 @@ a.contact__item:hover{background:rgba(23,32,45,.14)}
   </div>
 </div>
 <a class="skip" href="#main">本文へ移動</a>
+<div class="notice" role="note"><div class="wrap notice__in"><span class="notice__tag">お知らせ</span><p><b>今週の土曜</b>はスープが切れしだい終了します（22時ごろの予定）。</p><a href="#news">一覧</a></div></div>
 
 <header class="header">
   <div class="wrap header__in">
@@ -415,6 +483,7 @@ a.contact__item:hover{background:rgba(23,32,45,.14)}
     <nav class="nav" aria-label="ページ内">
       <a href="#bowl">看板の一杯</a>
       <a href="#kenbaiki">券売機メニュー</a>
+      <a href="#owner">店主から</a>
       <a href="#crowd">混む時間</a>
       <a href="#first">はじめての方へ</a>
       <a href="#access">アクセス</a>
@@ -426,7 +495,10 @@ a.contact__item:hover{background:rgba(23,32,45,.14)}
     <ul class="wrap">
       <li><a href="#bowl">看板の一杯</a></li>
       <li><a href="#kenbaiki">券売機メニュー</a></li>
+      <li><a href="#vote">トッピング総選挙</a></li>
+      <li><a href="#owner">店主から</a></li>
       <li><a href="#crowd">混む時間</a></li>
+      <li><a href="#news">お知らせ</a></li>
       <li><a href="#first">はじめての方へ</a></li>
       <li><a href="#faq">よくある質問</a></li>
       <li><a href="#access">アクセス</a></li>
@@ -436,11 +508,14 @@ a.contact__item:hover{background:rgba(23,32,45,.14)}
 </header>
 
 <main id="main">
-  <section class="hero" id="top" aria-labelledby="hero-title">
+  <section class="hero hero--night" id="top" aria-labelledby="hero-title">
     <div class="wrap hero__grid">
       <div class="hero__body">
         <span class="sign">広島の豚骨醤油｜中華そば あかり</span>
         <h1 id="hero-title"><span>夜の<em>0時</em>まで、</span><span>広島の</span><span>豚骨醤油。</span></h1>
+        <ul class="for" aria-label="こんな方に">
+          <li>おひとりさま</li><li>仕事帰り・飲んだあと</li><li>はじめての方</li>
+        </ul>
         <p class="hero__lead">豚骨と鶏ガラを12時間炊いたスープに、細いストレート麺。仕事帰りでも間に合うように、夜は0時まで開けています。中華そば<span class="price">850<small>円</small></span>。</p>
         <div class="btn-row">
           <a class="btn btn--primary" href="#kenbaiki">券売機メニューを見る</a>
@@ -460,7 +535,7 @@ a.contact__item:hover{background:rgba(23,32,45,.14)}
         <figcaption class="hero__tag"><span>中華そば＋味玉＋のり</span><span class="price">1,090円</span></figcaption>
       </figure>
     </div>
-    <div class="wrap memo-wrap"><aside class="memo" aria-label="設計メモ"><p class="memo__label">設計メモ｜ファーストビュー</p><p>ラーメン店を探す人が一番知りたいのは「今開いているか」。深夜営業という最大の強みを見出しの数字にして、営業中／準備中は日本時間で自動表示しています。丼は真上から描き、何がのっているか一目で分かるようにしました。</p></aside></div>
+    <div class="wrap memo-wrap"><aside class="memo memo--dark" aria-label="設計メモ"><p class="memo__label">設計メモ｜ファーストビュー</p><p>ラーメン店を探す人が一番知りたいのは「今開いているか」。深夜営業という最大の強みを見出しの数字にして、画面全体を夜の店の明かりの色にしました。「おひとりさま」「仕事帰り」など、来てほしいお客さんを最初に言い切っています。営業中／準備中は日本時間で自動表示です。</p><p class="memo__ref">お手本：麪家ひばり（ターゲットを言い切る）／SOBAHOUSE 金色不如帰（営業情報を最初の画面に）／ホープ軒本舗（店の空気を最初に見せる）</p></aside></div>
   </section>
 
   <div class="band" aria-hidden="true"><div class="band__row"><span>中華そば</span><span>チャーシュー麺</span><span>特製中華そば</span><span>塩そば</span><span>焼き餃子</span><span>半チャーハン</span><span>味玉</span><span>ねぎ増し</span><span>中華そば</span><span>チャーシュー麺</span><span>特製中華そば</span><span>塩そば</span><span>焼き餃子</span><span>半チャーハン</span><span>味玉</span><span>ねぎ増し</span></div></div>
@@ -512,7 +587,7 @@ a.contact__item:hover{background:rgba(23,32,45,.14)}
         </ol>
       </div>
     </div>
-    <div class="wrap memo-wrap"><aside class="memo" aria-label="設計メモ"><p class="memo__label">設計メモ｜看板の一杯</p><p>「こだわりのスープ」と書く代わりに、丼の断面図で何が入っているかを見せます。番号で図と説明を結んでいるので、スマホの小さな画面でも文字がつぶれません。</p></aside></div>
+    <div class="wrap memo-wrap"><aside class="memo" aria-label="設計メモ"><p class="memo__label">設計メモ｜看板の一杯</p><p>「こだわりのスープ」と書く代わりに、丼の断面図で何が入っているかを見せます。番号で図と説明を結んでいるので、スマホの小さな画面でも文字がつぶれません。</p><p class="memo__ref">お手本：ラーメン一心（こだわりを短く言い切る）</p></aside></div>
   </section>
 
   <!-- 券売機 -->
@@ -521,18 +596,19 @@ a.contact__item:hover{background:rgba(23,32,45,.14)}
       <div class="section-head">
         <span class="sign">券売機メニュー</span>
         <h2 id="ken-title"><span class="nb">押す順番を、</span><span class="nb">ここで練習できます</span></h2>
-        <p class="lead">お店の券売機と同じ並びです。ボタンを押すと、丼のイメージと食券が変わります。</p>
+        <p class="lead">お店の券売機と同じ並びです。英語表示にも切り替えられます。ボタンを押すと、丼のイメージと食券が変わります。</p>
       </div>
       <div class="kenbaiki">
         <div class="machine" role="group" aria-label="券売機（デモ）">
           <div class="machine__top">
-            <span class="machine__name">食券販売機</span>
+            <span class="machine__name" id="mName">食券販売機</span>
+            <span class="lang" role="group" aria-label="表示言語"><button type="button" id="lang-ja" aria-pressed="true">日本語</button><button type="button" id="lang-en" aria-pressed="false">English</button></span>
             <span class="machine__lcd" id="lcd" aria-hidden="true">¥0</span>
           </div>
-          <div class="row row--ramen"><p class="row__label" id="r1">ラーメン（まず1枚）</p><div class="tiles" role="group" aria-labelledby="r1" data-cat="ramen"></div></div>
-          <div class="row row--top"><p class="row__label" id="r2">トッピング</p><div class="tiles" role="group" aria-labelledby="r2" data-cat="top"></div></div>
-          <div class="row row--side"><p class="row__label" id="r3">サイド</p><div class="tiles" role="group" aria-labelledby="r3" data-cat="side"></div></div>
-          <div class="row row--drink"><p class="row__label" id="r4">ドリンク</p><div class="tiles" role="group" aria-labelledby="r4" data-cat="drink"></div></div>
+          <div class="row row--ramen"><p class="row__label" id="r1" data-en="Ramen (pick one first)">ラーメン（まず1枚）</p><div class="tiles" role="group" aria-labelledby="r1" data-cat="ramen"></div></div>
+          <div class="row row--top"><p class="row__label" id="r2" data-en="Toppings">トッピング</p><div class="tiles" role="group" aria-labelledby="r2" data-cat="top"></div></div>
+          <div class="row row--side"><p class="row__label" id="r3" data-en="Sides">サイド</p><div class="tiles" role="group" aria-labelledby="r3" data-cat="side"></div></div>
+          <div class="row row--drink"><p class="row__label" id="r4" data-en="Drinks">ドリンク</p><div class="tiles" role="group" aria-labelledby="r4" data-cat="drink"></div></div>
           <p class="machine__foot">※デモです。注文や支払いはできません。品目・価格は架空です。</p>
         </div>
 
@@ -566,7 +642,7 @@ a.contact__item:hover{background:rgba(23,32,45,.14)}
         <p class="toast" id="toast" role="status" hidden><span id="toastText"></span><a href="#tray-title">食券を見る</a></p>
       </div>
     </div>
-    <div class="wrap memo-wrap"><aside class="memo" aria-label="設計メモ"><p class="memo__label">設計メモ｜券売機メニュー</p><p>はじめてのラーメン店で一番緊張するのが券売機の前。実機と同じ色分けでメニューを並べ、押すと丼の具と食券が変わる体験にしました。「麺のかたさの言い方」まで先に分かるので、来店前の不安がひとつ減ります。色だけでなく見出しでも区別しています。</p></aside></div>
+    <div class="wrap memo-wrap"><aside class="memo" aria-label="設計メモ"><p class="memo__label">設計メモ｜券売機メニュー</p><p>はじめてのラーメン店で一番緊張するのが券売機の前。実機と同じ色分けでメニューを並べ、押すと丼の具と食券が変わる体験にしました。「麺のかたさの言い方」まで先に分かるので、来店前の不安がひとつ減ります。色だけでなく見出しでも区別しています。観光客向けに、券売機の表示を英語に切り替えられるようにしました。</p><p class="memo__ref">お手本：ラーメン二郎 相模大野店（注文ガイド）／一蘭（多言語対応）</p></aside></div>
   </section>
 
   <!-- サイド -->
@@ -584,6 +660,45 @@ a.contact__item:hover{background:rgba(23,32,45,.14)}
         <figure class="side"><svg class="illus" viewBox="0 0 400 400" role="img" aria-label="半チャーハン"><use href="#rm-chahan"/></svg><figcaption><span class="side__name">半チャーハン<span class="price">380円</span></span><span class="side__desc">チャーシューの切れ端入り</span></figcaption></figure>
       </div>
     </div>
+  </section>
+
+  <!-- 総選挙 -->
+  <section class="section" id="vote" aria-labelledby="vote-title">
+    <div class="wrap vote">
+      <div class="section-head" style="margin-bottom:0">
+        <span class="sign">お客さま投票</span>
+        <h2 id="vote-title"><span class="nb">トッピング総選挙、</span><span class="nb">1位は味玉でした</span></h2>
+        <p class="lead">券売機の横の投票箱で、好きなトッピングを聞きました。1位の味玉は、来月から少し大きくします。</p>
+        <p class="note">※投票数・結果は架空です。</p>
+      </div>
+      <ol class="vote__list" aria-label="投票結果">
+        <li><span class="vote__rank">1位</span><span class="vote__name">味玉</span><span class="vote__pct">38%</span><span class="vote__bar"><i style="--v:38%"></i></span></li>
+        <li><span class="vote__rank">2位</span><span class="vote__name">ねぎ増し</span><span class="vote__pct">24%</span><span class="vote__bar"><i style="--v:24%"></i></span></li>
+        <li><span class="vote__rank">3位</span><span class="vote__name">チャーシュー追加</span><span class="vote__pct">19%</span><span class="vote__bar"><i style="--v:19%"></i></span></li>
+        <li><span class="vote__rank">4位</span><span class="vote__name">のり</span><span class="vote__pct">11%</span><span class="vote__bar"><i style="--v:11%"></i></span></li>
+        <li><span class="vote__rank">5位</span><span class="vote__name">にんにく</span><span class="vote__pct">8%</span><span class="vote__bar"><i style="--v:8%"></i></span></li>
+      </ol>
+    </div>
+    <div class="wrap memo-wrap"><aside class="memo" aria-label="設計メモ"><p class="memo__label">設計メモ｜トッピング総選挙</p><p>お客さんを巻き込む企画は、常連さんがサイトを見に来る理由になります。結果をメニュー改善につなげると、「声を聞いてくれる店」という印象も残ります。</p><p class="memo__ref">お手本：喜多方ラーメン 坂内（お客さま投票のメニュー総選挙）</p></aside></div>
+  </section>
+
+  <!-- 店主 -->
+  <section class="section section--tint" id="owner" aria-labelledby="owner-title">
+    <div class="wrap owner">
+      <figure aria-hidden="true">
+        <svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="100" fill="#2A1C13"/><path d="M42 200c4-44 28-68 58-68s54 24 58 68z" fill="#1E1611"/><path d="M42 200c4-44 28-68 58-68s54 24 58 68z" fill="none" stroke="#E9A04A" stroke-width="3"/><circle cx="100" cy="92" r="40" fill="#E2AF85"/><path d="M60 82c2-28 20-40 40-40s38 12 40 40z" fill="#C8341F"/><path d="M60 82h80" stroke="#FFF3D6" stroke-width="4"/><path d="M80 100q6-4 12 0M108 100q6-4 12 0" stroke="#2A1C13" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M88 116h24" stroke="#2A1C13" stroke-width="4" stroke-linecap="round"/><path d="M78 124q22 16 44 0" fill="#3A2A20"/></svg>
+        <figcaption>店主 灯山 健（イラスト・架空）</figcaption>
+      </figure>
+      <div class="owner__body">
+        <span class="sign">店主から</span>
+        <h2 id="owner-title" class="vh">店主からのメッセージ</h2>
+        <p class="owner__quote"><span class="nb">「仕事終わりに、</span><span class="nb">あったかい一杯を。</span><br><span class="nb">それだけのために、</span><span class="nb">0時まで開けとります。」</span></p>
+        <p>会社員だったころ、残業帰りに開いているのは牛丼屋かコンビニだけでした。広島の中華そばを、夜遅くでも食べられる店をつくりたくて、この店を始めました。</p>
+        <p>麺のかたさや味の濃さは、遠慮なく言ってください。常連さんの「いつもの」を覚えるのが楽しみです。</p>
+        <p class="owner__sign">店主 灯山 健</p>
+      </div>
+    </div>
+    <div class="wrap memo-wrap"><aside class="memo" aria-label="設計メモ"><p class="memo__label">設計メモ｜店主のメッセージ</p><p>「深夜営業」を、店主自身の体験から始まった理由として語ると、ただの営業時間が「この店を選ぶ理由」になります。方言のまま載せて、人柄も伝えます。</p><p class="memo__ref">お手本：ラーメン二郎 相模大野店（店主のメッセージ）</p></aside></div>
   </section>
 
   <!-- 理由 -->
@@ -657,8 +772,39 @@ a.contact__item:hover{background:rgba(23,32,45,.14)}
         <div class="guide__item"><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17h14v-5l-2-5H7l-2 5z"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/></svg>駐車場</h3><p>店の隣に3台。満車のときは近くのコインパーキングをご利用ください。</p></div>
         <div class="guide__item"><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h18M12 3v18"/></svg>替え玉・ライス</h3><p>替え玉はありません。麺を多めにしたい方は「大盛」の食券をどうぞ。</p></div>
       </div>
+      <div class="wrap" style="padding-left:0;padding-right:0"><div class="en" lang="en">
+        <h3>For first-time visitors <span>English</span></h3>
+        <ol>
+          <li>Buy a meal ticket at the machine by the door (cash or IC card).</li>
+          <li>Take any free seat. Counter for one, tables for groups.</li>
+          <li>Hand the ticket to the staff. Tell us your noodle firmness: <b>katame</b> (firm), <b>futsu</b> (regular), <b>yawame</b> (soft).</li>
+          <li>Enjoy. Leave the bowl on the counter when you're done.</li>
+        </ol>
+      </div></div>
     </div>
-    <div class="wrap memo-wrap"><aside class="memo" aria-label="設計メモ"><p class="memo__label">設計メモ｜はじめての方へ</p><p>ここは来店の流れそのものなので、番号付きの手順にしています。お店ごとにルール（食券の出し方、丼を返すかどうか）が違う部分こそ、先に書いておく価値があります。</p></aside></div>
+    <div class="wrap memo-wrap"><aside class="memo" aria-label="設計メモ"><p class="memo__label">設計メモ｜はじめての方へ</p><p>ここは来店の流れそのものなので、番号付きの手順にしています。お店ごとにルール（食券の出し方、丼を返すかどうか）が違う部分こそ、先に書いておく価値があります。海外からのお客さま向けに、同じ流れを英語でも載せました。</p><p class="memo__ref">お手本：ラーメン二郎 相模大野店（はじめての方へ）／SOBAHOUSE 金色不如帰（英語のお知らせ）</p></aside></div>
+  </section>
+
+  <!-- お知らせ -->
+  <section class="section" id="newsSec" aria-labelledby="news-title" style="padding-top:0">
+    <div class="wrap">
+      <div class="news" id="news">
+        <div class="news__head"><h3 id="news-title">お知らせ</h3>
+          <div class="news__filter" role="group" aria-label="お知らせの種類">
+            <button type="button" id="nf-all" data-cat="all" aria-pressed="true">すべて</button>
+            <button type="button" id="nf-eigyo" data-cat="営業" aria-pressed="false">営業</button>
+            <button type="button" id="nf-menu" data-cat="メニュー" aria-pressed="false">メニュー</button>
+          </div>
+        </div>
+        <ul class="news__list" id="newsList">
+          <li data-cat="営業"><time datetime="2026-11-07">11.07</time><span class="news__cat">営業</span><p>土曜はスープが切れしだい終了します（22時ごろの予定）</p></li>
+          <li data-cat="メニュー"><time datetime="2026-11-01">11.01</time><span class="news__cat">メニュー</span><p>冬季限定「辛味噌つけ麺」はじめました</p></li>
+          <li data-cat="メニュー"><time datetime="2026-10-20">10.20</time><span class="news__cat">メニュー</span><p>トッピング総選挙の結果、味玉を大きくします</p></li>
+          <li data-cat="営業"><time datetime="2026-10-01">10.01</time><span class="news__cat">営業</span><p>券売機が交通系ICに対応しました</p></li>
+        </ul>
+        <p class="note">※お知らせはすべて架空です。</p>
+      </div>
+    </div>
   </section>
 
   <!-- FAQ -->
@@ -720,18 +866,18 @@ a.contact__item:hover{background:rgba(23,32,45,.14)}
       <div class="works__head">
         <p class="works__eyebrow">ここから先は、このサイトをつくった人の話です</p>
         <h2 id="works-title"><span class="nb">お店の空気を、</span><span class="nb">そのままWebに。</span></h2>
-        <p class="works__lead">ゆうきです。広島で、お店ごとに一から設計するWebサイトをつくっています。このページはラーメン屋を想定した制作サンプルです。同じ「飲食店」でも、ラーメン屋なら券売機と深夜営業、海鮮食堂なら仕入れと品書き、というように、その業種のお客さんが知りたいことから組み立てます。</p>
+        <p class="works__lead">ゆうきです。広島で、お店ごとに一から設計するWebサイトをつくっています。設計メモには、参考にした実在の店舗サイト（お手本）も書いています。このページはラーメン屋を想定した制作サンプルです。同じ「飲食店」でも、ラーメン屋なら券売機と深夜営業、海鮮食堂なら仕入れと品書き、というように、その業種のお客さんが知りたいことから組み立てます。</p>
       </div>
 
       <h3 class="works__h3">制作サンプル</h3>
       <div class="samples">
         <a class="sample" href="../"><svg viewBox="0 0 96 96" aria-hidden="true"><rect width="96" height="96" fill="#1E3A6E"/><rect x="58" y="16" width="20" height="64" fill="#E5B232"/><text x="68" y="38" font-size="14" font-weight="900" text-anchor="middle" fill="#17202D">港</text><text x="68" y="56" font-size="14" font-weight="900" text-anchor="middle" fill="#17202D">食</text><text x="68" y="74" font-size="14" font-weight="900" text-anchor="middle" fill="#17202D">堂</text><circle cx="30" cy="54" r="18" fill="#F17F56"/><circle cx="30" cy="54" r="10" fill="#FCD3BF"/></svg><span><b>海鮮食堂編</b>のれんの藍と品書き。日替わり定食と季節の魚を中心に。</span></a>
-        <a class="sample" href="./" aria-current="page"><svg viewBox="0 0 96 96" aria-hidden="true"><rect width="96" height="96" fill="#2B1E16"/><circle cx="48" cy="48" r="38" fill="#B4301D"/><circle cx="48" cy="48" r="32" fill="#FBF8F1"/><circle cx="48" cy="48" r="26" fill="#9C5C22"/><ellipse cx="56" cy="42" rx="11" ry="8" fill="#EBC7A3" stroke="#8E4A23" stroke-width="2"/><circle cx="40" cy="52" r="4" fill="#D5EAA9"/></svg><span><b>ラーメン屋編<em>このページ</em></b>券売機を練習できるメニュー、混む時間のグラフ。</span></a>
+        <a class="sample" href="./" aria-current="page"><svg viewBox="0 0 96 96" aria-hidden="true"><rect width="96" height="96" fill="#2B1E16"/><circle cx="48" cy="48" r="38" fill="#B4301D"/><circle cx="48" cy="48" r="32" fill="#FBF8F1"/><circle cx="48" cy="48" r="26" fill="#9C5C22"/><ellipse cx="56" cy="42" rx="11" ry="8" fill="#EBC7A3" stroke="#8E4A23" stroke-width="2"/><circle cx="40" cy="52" r="4" fill="#D5EAA9"/></svg><span><b>ラーメン屋編<em>このページ</em></b>英語にも切り替わる券売機メニュー、混む時間のグラフ、トッピング総選挙。</span></a>
       </div>
 
       <h3 class="works__h3">このサンプルに入っている仕組み</h3>
       <ul class="feats">
-        <li><b>券売機メニュー</b><span>押すと丼の具・食券・合計が変わる体験型メニュー</span></li>
+        <li><b>券売機メニュー</b><span>押すと丼の具・食券・合計が変わる体験型メニュー。英語表示に切り替え可能</span></li>
         <li><b>営業中を自動表示</b><span>曜日と時刻で「営業中／準備中／定休日」を切り替え</span></li>
         <li><b>混雑時間のグラフ</b><span>今の時間帯に「いま」の印が付く</span></li>
         <li><b>丼の断面図</b><span>番号で図と説明をつなぎ、スマホでも読める</span></li>
@@ -812,22 +958,22 @@ a.contact__item:hover{background:rgba(23,32,45,.14)}
 
   // 券売機
   var ITEMS=[
-    {id:'chuka',cat:'ramen',name:'中華そば',price:850},
-    {id:'chashu',cat:'ramen',name:'チャーシュー麺',price:1150},
-    {id:'tokusei',cat:'ramen',name:'特製中華そば',price:1250},
-    {id:'shio',cat:'ramen',name:'塩そば',price:900},
-    {id:'egg',cat:'top',name:'味玉',price:130},
-    {id:'nori',cat:'top',name:'のり',price:110},
-    {id:'negi',cat:'top',name:'ねぎ増し',price:150},
-    {id:'oomori',cat:'top',name:'大盛',price:150},
-    {id:'gyoza',cat:'side',name:'焼き餃子 5個',price:380},
-    {id:'chahan',cat:'side',name:'半チャーハン',price:380},
-    {id:'rice',cat:'side',name:'ライス',price:150},
-    {id:'kids',cat:'side',name:'お子さま中華そば',price:500},
-    {id:'beer',cat:'drink',name:'瓶ビール',price:600},
-    {id:'highball',cat:'drink',name:'ハイボール',price:450},
-    {id:'oolong',cat:'drink',name:'ウーロン茶',price:200},
-    {id:'cola',cat:'drink',name:'コーラ',price:200}
+    {id:'chuka',cat:'ramen',name:'中華そば',en:'Chuka Soba',price:850},
+    {id:'chashu',cat:'ramen',name:'チャーシュー麺',en:'Chashu Men',price:1150},
+    {id:'tokusei',cat:'ramen',name:'特製中華そば',en:'Special Chuka Soba',price:1250},
+    {id:'shio',cat:'ramen',name:'塩そば',en:'Shio Soba',price:900},
+    {id:'egg',cat:'top',name:'味玉',en:'Seasoned Egg',price:130},
+    {id:'nori',cat:'top',name:'のり',en:'Nori',price:110},
+    {id:'negi',cat:'top',name:'ねぎ増し',en:'Extra Green Onion',price:150},
+    {id:'oomori',cat:'top',name:'大盛',en:'Large Noodles',price:150},
+    {id:'gyoza',cat:'side',name:'焼き餃子 5個',en:'Gyoza (5)',price:380},
+    {id:'chahan',cat:'side',name:'半チャーハン',en:'Half Fried Rice',price:380},
+    {id:'rice',cat:'side',name:'ライス',en:'Rice',price:150},
+    {id:'kids',cat:'side',name:'お子さま中華そば',en:'Kids Ramen',price:500},
+    {id:'beer',cat:'drink',name:'瓶ビール',en:'Bottled Beer',price:600},
+    {id:'highball',cat:'drink',name:'ハイボール',en:'Highball',price:450},
+    {id:'oolong',cat:'drink',name:'ウーロン茶',en:'Oolong Tea',price:200},
+    {id:'cola',cat:'drink',name:'コーラ',en:'Cola',price:200}
   ];
   var COLORS={ramen:'#B4301D',top:'#E2B33C',side:'#2F5F8A',drink:'#3D7A4A'};
   var count={},order=[],lastRamen=null;
@@ -836,7 +982,7 @@ a.contact__item:hover{background:rgba(23,32,45,.14)}
     count[it.id]=0;
     var b=document.createElement('button');
     b.type='button';b.className='tile';b.id='tile-'+it.id;
-    b.innerHTML='<span>'+it.name+'</span><span class="tile__price">'+yen(it.price)+'円</span><span class="tile__count" hidden></span>';
+    b.innerHTML='<span class="tile__name">'+it.name+'</span><span class="tile__price">'+yen(it.price)+'円</span><span class="tile__count" hidden></span>';
     b.setAttribute('aria-label',it.name+' '+yen(it.price)+'円の食券を追加');
     b.addEventListener('click',function(){add(it.id,b)});
     document.querySelector('.tiles[data-cat="'+it.cat+'"]').appendChild(b);
@@ -893,6 +1039,13 @@ a.contact__item:hover{background:rgba(23,32,45,.14)}
     desc.textContent='丼のイメージ：'+parts.join('、');
     document.getElementById('customBowl').setAttribute('aria-label','選んだラーメンのイメージ：'+parts.join('、'));
   }
+  var en=false;
+  function setLang(e){en=e;document.getElementById('lang-ja').setAttribute('aria-pressed',String(!e));document.getElementById('lang-en').setAttribute('aria-pressed',String(e));
+    document.getElementById('mName').textContent=e?'Ticket Machine':'食券販売機';
+    ITEMS.forEach(function(it){var t=document.getElementById('tile-'+it.id);t.querySelector('.tile__name').textContent=e?it.en:it.name;t.querySelector('.tile__price').textContent=e?'¥'+yen(it.price):yen(it.price)+'円';t.setAttribute('lang',e?'en':'ja');});
+    [].forEach.call(document.querySelectorAll('.row__label[data-en]'),function(l){if(!l.hasAttribute('data-ja'))l.setAttribute('data-ja',l.textContent);l.textContent=e?l.getAttribute('data-en'):l.getAttribute('data-ja');});}
+  document.getElementById('lang-ja').addEventListener('click',function(){setLang(false)});
+  document.getElementById('lang-en').addEventListener('click',function(){setLang(true)});
   document.getElementById('reset').addEventListener('click',function(){ITEMS.forEach(function(it){count[it.id]=0});order=[];lastRamen=null;render();});
   render();
 
@@ -933,6 +1086,10 @@ a.contact__item:hover{background:rgba(23,32,45,.14)}
   }
   copy('copyTel','telText','copyMsg','コピーしました（サンプルの架空番号です）','番号を選択しました（サンプルの架空番号です）');
   copy('copyMaker','makerTel','copyMakerMsg','電話番号をコピーしました','番号を選択しました。コピーしてお使いください');
+
+  // お知らせの絞り込み
+  var nb=[].slice.call(document.querySelectorAll('.news__filter button'));
+  nb.forEach(function(x){x.addEventListener('click',function(){var c=x.getAttribute('data-cat');nb.forEach(function(y){y.setAttribute('aria-pressed',String(y===x))});[].forEach.call(document.querySelectorAll('#newsList li'),function(li){li.hidden=!(c==='all'||li.getAttribute('data-cat')===c)});});});
 
   // 設計メモ
   var mt=document.getElementById('memoToggle'),root=document.documentElement;
