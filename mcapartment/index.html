@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>MC apartment｜五日市駅のマフィンと焼き菓子（ご提案用お試し版）</title>
+<meta name="description" content="広島市佐伯区五日市、五日市駅から徒歩約3分のマフィンと焼き菓子のお店 MC apartment。週替わりのマフィン、天然色素のアイシングクッキー、1個から予約できるオーダー。（ご提案用のお試し版です）">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Zen+Maru+Gothic:wght@500;700;900&display=swap">
+<style>
+/* Layout: 白い店内のショーケースをそのまま画面に。写真が主役、こげ茶の文字と紺のボタン（今のサイトから引き継ぎ）、アイシングのピンクを小さく。1カラム基調、主要セクションのみ2カラム */
+:root{
+  --c-bg:#FFFFFF; --c-surface:#F6F3F0; --c-surface-2:#EFEAE5;
+  --c-text:#2F2723; --c-muted:#62574F; --c-border:#E2DAD2;
+  --c-primary:#181D4E; --c-on-primary:#FFFFFF; --c-pink:#E8A3B4; --c-pink-ink:#A3405A;
+  --c-band:#3A2E28; --c-on-band:#F7F1EC; --c-open:#1F6B45; --c-closed:#9A4B12; --c-pen:#C0392B; --c-focus:#E8A3B4;
+  --f-en:"DM Sans","Helvetica Neue",Arial,sans-serif;
+  --f-head:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Hiragino Sans",sans-serif;
+  --f-body:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic","Meiryo",sans-serif;
+  --fs-hero:clamp(48px,10vw,132px); --fs-h2:clamp(26px,3.4vw,40px); --fs-h3:clamp(19px,1.8vw,22px);
+  --fs-body:16px; --fs-small:14px; --fs-xs:13px; --lh-body:1.9; --ls-body:.04em;
+  --max:1160px; --gutter:max(20px,env(safe-area-inset-left,0px)); --section:clamp(80px,11vw,140px); --card-pad:clamp(18px,2.4vw,28px);
+  --btn-h:52px; --r-sm:6px; --r-md:14px; --r-pill:999px;
+  --sh:0 10px 30px rgba(47,39,35,.12);
+  --d-fast:150ms; --d-base:300ms; --d-slow:600ms; --e-out:cubic-bezier(.16,1,.3,1);
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --c-bg:#191513; --c-surface:#221D1A; --c-surface-2:#2B2521; --c-text:#F3ECE6; --c-muted:#C3B6AB; --c-border:#3B332E;
+  --c-primary:#B9C0F5; --c-on-primary:#141733; --c-pink-ink:#F2B3C3; --c-band:#0F0C0B; --c-open:#7FD8A8; --c-closed:#F2B27A; --c-pen:#FF8F80; color-scheme:dark } }
+:root[data-theme="dark"]{
+  --c-bg:#191513; --c-surface:#221D1A; --c-surface-2:#2B2521; --c-text:#F3ECE6; --c-muted:#C3B6AB; --c-border:#3B332E;
+  --c-primary:#B9C0F5; --c-on-primary:#141733; --c-pink-ink:#F2B3C3; --c-band:#0F0C0B; --c-open:#7FD8A8; --c-closed:#F2B27A; --c-pen:#FF8F80; color-scheme:dark }
+
+*,*::before,*::after{box-sizing:border-box}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:76px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--c-bg);color:var(--c-text);font-family:var(--f-body);font-size:var(--fs-body);line-height:var(--lh-body);letter-spacing:var(--ls-body)}
+[hidden]{display:none!important}
+img{max-width:100%;display:block}
+h1,h2,h3,p,ul,ol,figure,dl,dd{margin:0}
+a{color:inherit;text-underline-offset:.25em}
+:focus-visible{outline:3px solid var(--c-focus);outline-offset:3px;border-radius:4px}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.nb{display:inline-block}
+.wrap{max-width:var(--max);margin-inline:auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+@media (min-width:700px){ .wrap{padding-left:max(40px,env(safe-area-inset-left,0px));padding-right:max(40px,env(safe-area-inset-right,0px))} }
+.section{padding-block:var(--section)}
+.section--tint{background:var(--c-surface)}
+.photo{background:var(--c-surface-2);overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover}
+.en{font-family:var(--f-en);font-weight:500;letter-spacing:.18em;text-transform:uppercase;font-size:var(--fs-xs);color:var(--c-pink-ink)}
+.head{display:grid;gap:12px;margin-bottom:clamp(32px,5vw,56px);max-width:40em}
+.h2{font-family:var(--f-head);font-weight:700;font-size:var(--fs-h2);line-height:1.45;letter-spacing:.06em;text-wrap:balance}
+.lead{color:var(--c-muted)}
+.note{font-size:var(--fs-xs);color:var(--c-muted)}
+.price{font-family:var(--f-en);font-variant-numeric:tabular-nums;font-weight:500;white-space:nowrap}
+
+/* proposal bar & memos */
+.pbar{background:#10151E;color:#E9EDF3;font-size:13px}
+.pbar__in{display:flex;flex-wrap:wrap;gap:4px 16px;align-items:center;justify-content:space-between;padding-block:8px}
+.pbar b{color:#E5B232;letter-spacing:.06em}
+.pbar span{color:#A7B1BF}
+.ptoggle{display:inline-flex;align-items:center;gap:8px;min-height:36px;padding:0 12px 0 6px;border-radius:999px;border:1px solid #2A3445;background:none;color:#E9EDF3;font:inherit;font-size:12.5px;font-weight:700;cursor:pointer}
+.ptoggle i{width:32px;height:18px;border-radius:999px;background:#2A3445;position:relative;flex:none}
+.ptoggle i::after{content:"";position:absolute;top:3px;left:3px;width:12px;height:12px;border-radius:50%;background:#E9EDF3;transition:transform .2s}
+.ptoggle[aria-pressed="true"] i{background:#E5B232}
+.ptoggle[aria-pressed="true"] i::after{transform:translateX(14px);background:#10151E}
+.memo{display:none;max-width:42em;margin-top:clamp(28px,4vw,40px);padding:2px 0 2px 16px;border-left:3px solid var(--c-pen);font-size:13.5px;line-height:1.85}
+:root[data-memo] .memo{display:grid;gap:4px}
+.memo b{font-size:12px;letter-spacing:.12em;color:var(--c-pen)}
+.memo--light{color:#F7F1EC}
+
+/* header */
+.header{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:color-mix(in srgb,var(--c-bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--c-border)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:41;background:var(--c-bg)}
+.header__in{display:flex;align-items:center;gap:16px;min-height:64px}
+.logo{display:grid;text-decoration:none;margin-right:auto;line-height:1}
+.logo b{font-family:var(--f-en);font-weight:700;font-size:21px;letter-spacing:.02em}
+.logo small{font-family:var(--f-en);font-size:12px;letter-spacing:.24em;color:var(--c-muted);margin-top:5px;text-transform:uppercase}
+.nav{display:none;gap:4px}
+.nav a{font-size:14px;font-weight:500;text-decoration:none;min-height:44px;display:inline-flex;align-items:center;padding:0 10px;border-radius:var(--r-pill)}
+.nav a:hover{background:var(--c-surface)}
+@media (min-width:960px){ .nav{display:flex} .menu-btn{display:none!important} }
+.menu-btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 4px 0 12px;border:0;background:none;color:var(--c-text);font:inherit;font-family:var(--f-en);font-size:13px;font-weight:700;letter-spacing:.14em;cursor:pointer}
+.menu-btn i{width:26px;height:10px;position:relative}
+.menu-btn i::before,.menu-btn i::after{content:"";position:absolute;left:0;right:0;height:2px;background:currentColor;transition:transform .25s}
+.menu-btn i::before{top:0}.menu-btn i::after{bottom:0}
+.menu-btn[aria-expanded="true"] i::before{transform:translateY(4px) rotate(20deg)}
+.menu-btn[aria-expanded="true"] i::after{transform:translateY(-4px) rotate(-20deg)}
+.drawer{position:fixed;inset:0;z-index:39;background:var(--c-bg);padding-top:calc(64px + env(safe-area-inset-top,0px));overflow:auto}
+.drawer ul{list-style:none;padding:24px 0 40px;display:grid}
+.drawer a{display:flex;align-items:baseline;gap:14px;min-height:60px;text-decoration:none;font-family:var(--f-head);font-weight:700;font-size:1.35rem;border-bottom:1px solid var(--c-border)}
+.drawer a small{font-family:var(--f-en);font-size:12px;letter-spacing:.2em;color:var(--c-pink-ink);font-weight:500;width:6.5em;flex:none}
+body.drawer-open{overflow:hidden}
+
+/* floating buttons (HONGO / Candy apple) */
+.fab{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;display:grid;gap:10px}
+.fab a{width:68px;height:68px;border-radius:50%;display:grid;place-content:center;text-align:center;text-decoration:none;font-family:var(--f-en);font-size:12px;font-weight:700;letter-spacing:.02em;line-height:1.2;box-shadow:var(--sh);transition:transform var(--d-fast)}
+.fab a:hover{transform:translateY(-2px)}
+.fab svg{width:20px;height:20px;margin:0 auto 2px}
+.fab__line{background:#06C755;color:#FFFFFF}
+.fab__shop{background:var(--c-primary);color:var(--c-on-primary)}
+
+/* hero */
+.hero{position:relative}
+.hero__photo{height:min(78svh,760px);min-height:440px}
+.hero__photo img{object-position:center 40%}
+.hero__shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,14,10,.05) 30%,rgba(20,14,10,.62) 100%);pointer-events:none}
+.hero__copy{position:absolute;left:0;right:0;bottom:0;color:#FFFFFF;padding-bottom:clamp(28px,5vw,56px)}
+.hero__en{font-family:var(--f-en);font-weight:700;font-size:var(--fs-hero);line-height:.9;letter-spacing:-.02em}
+.hero__en span{display:block}
+.hero__en em{font-style:normal;color:var(--c-pink)}
+.hero h1{font-family:var(--f-head);font-weight:700;font-size:clamp(18px,1.6vw + 10px,26px);letter-spacing:.1em;margin-top:18px;line-height:1.7}
+@media (prefers-reduced-motion: no-preference){
+  .hero__en span{animation:rise 1s var(--e-out) both}
+  .hero__en span:nth-child(2){animation-delay:.12s}
+  .hero h1{animation:rise 1s var(--e-out) .3s both}
+}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}}
+.today{background:var(--c-band);color:var(--c-on-band)}
+.today__in{display:flex;flex-wrap:wrap;align-items:center;gap:8px 24px;padding-block:14px;font-size:14px}
+.status{display:inline-flex;align-items:center;gap:8px;font-weight:700}
+.status i{width:9px;height:9px;border-radius:50%;background:currentColor}
+.today .status[data-state="open"]{color:#8FE3B5}
+.today .status[data-state="closed"]{color:#FFC48A}
+.today a{margin-left:auto;font-weight:700;text-decoration:none;min-height:40px;display:inline-flex;align-items:center;gap:6px;border-bottom:1px solid currentColor}
+.notice{background:var(--c-surface)}
+.notice__in{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;padding-block:12px;font-size:14px}
+.notice b{font-family:var(--f-en);font-size:12px;letter-spacing:.16em;color:var(--c-pink-ink)}
+.notice strong{font-weight:700}
+
+/* concept */
+.concept{display:grid;gap:clamp(36px,6vw,72px);align-items:center}
+@media (min-width:900px){ .concept{grid-template-columns:minmax(0,1fr) minmax(0,1fr)} }
+.concept .photo{aspect-ratio:5/3;border-radius:var(--r-md)}
+.concept__body{display:grid;gap:18px}
+.since{display:flex;align-items:flex-end;gap:14px;font-family:var(--f-en)}
+.since b{font-size:clamp(64px,8vw,104px);line-height:.85;font-weight:700;letter-spacing:-.03em}
+.since span{font-size:13px;letter-spacing:.14em;color:var(--c-muted);padding-bottom:6px;line-height:1.5}
+.materials{list-style:none;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;border-top:1px solid var(--c-border);margin-top:8px}
+.materials li{padding:14px 4px;border-bottom:1px solid var(--c-border);display:grid;gap:0}
+.materials li:nth-child(odd){border-right:1px solid var(--c-border);padding-right:14px}
+.materials li:nth-child(even){padding-left:14px}
+.materials small{font-size:12px;color:var(--c-muted)}
+.materials b{font-family:var(--f-head);font-weight:700;font-size:16px}
+
+/* lineup */
+.lineup{list-style:none;padding:0;display:grid;gap:clamp(28px,4vw,40px)}
+@media (min-width:860px){ .lineup{grid-template-columns:repeat(3,minmax(0,1fr))} }
+.item{display:grid;gap:14px;align-content:start}
+.item .photo{aspect-ratio:4/5;border-radius:var(--r-md);position:relative}
+.item__no{position:absolute;left:14px;top:12px;font-family:var(--f-en);font-weight:700;font-size:13px;letter-spacing:.16em;background:var(--c-bg);color:var(--c-text);padding:2px 10px;border-radius:var(--r-pill)}
+.item h3{font-family:var(--f-head);font-weight:700;font-size:var(--fs-h3);letter-spacing:.06em}
+.item p{font-size:15px;color:var(--c-muted)}
+.item .more{font-weight:700;font-size:14px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;min-height:40px;color:var(--c-primary);border-bottom:1.5px solid currentColor;justify-self:start}
+.cake{margin-top:clamp(28px,4vw,40px);display:flex;gap:16px;align-items:center;padding:16px;border:1px solid var(--c-border);border-radius:var(--r-md)}
+.cake .photo{width:88px;height:88px;border-radius:10px;flex:none}
+.cake p{font-size:15px}
+.cake b{font-family:var(--f-head)}
+
+/* icing */
+.icing{display:grid;gap:clamp(32px,5vw,56px)}
+@media (min-width:960px){ .icing{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);align-items:start} }
+.strip{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;scrollbar-width:thin}
+.strip figure{flex:none;width:min(62vw,300px);scroll-snap-align:start;display:grid;gap:6px}
+.strip .photo{aspect-ratio:1/1;border-radius:var(--r-md)}
+.strip figcaption{font-size:13px;color:var(--c-muted)}
+.plist{width:100%;border-collapse:collapse;font-size:15px}
+.plist caption{text-align:left;font-family:var(--f-head);font-weight:700;font-size:17px;padding-bottom:10px}
+.plist th,.plist td{padding:10px 0;border-bottom:1px solid var(--c-border);text-align:left}
+.plist td{text-align:right}
+.plist .tax{font-size:12px;color:var(--c-muted);margin-left:4px}
+.icing__note{display:grid;gap:4px;margin-top:14px}
+
+/* order chooser */
+.order{display:grid;gap:24px}
+@media (min-width:960px){ .order{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);align-items:start} }
+.ask{background:var(--c-bg);border:1px solid var(--c-border);border-radius:var(--r-md);padding:var(--card-pad);display:grid;gap:14px}
+.ask label{font-family:var(--f-head);font-weight:700;font-size:18px}
+.ask input{font:inherit;font-size:17px;padding:12px 14px;border:1.5px solid var(--c-muted);border-radius:var(--r-sm);background:var(--c-bg);color:var(--c-text);width:100%;min-height:52px}
+.quick{display:flex;gap:8px;flex-wrap:wrap}
+.quick button{font:inherit;font-size:14px;font-weight:700;min-height:44px;padding:0 16px;border-radius:var(--r-pill);border:1.5px solid var(--c-border);background:var(--c-bg);color:var(--c-text);cursor:pointer}
+.quick button[aria-pressed="true"]{background:var(--c-text);color:var(--c-bg);border-color:var(--c-text)}
+.answer{font-size:15px;min-height:1.9em}
+.answer b{font-family:var(--f-head)}
+.plans{list-style:none;padding:0;display:grid;gap:12px}
+.plan{background:var(--c-bg);border:1.5px solid var(--c-border);border-radius:var(--r-md);padding:18px 20px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 16px;align-items:center;transition:opacity var(--d-base),border-color var(--d-base),transform var(--d-base) var(--e-out)}
+.plan h3{font-family:var(--f-head);font-weight:700;font-size:18px}
+.plan p{grid-column:1/-1;font-size:14.5px;color:var(--c-muted)}
+.plan__lead{font-family:var(--f-en);font-weight:700;font-size:13px;letter-spacing:.06em;padding:4px 12px;border-radius:var(--r-pill);background:var(--c-surface-2);white-space:nowrap}
+.plan__ok{display:none;grid-column:1/-1;font-size:13.5px;font-weight:700}
+.plan[data-state="ok"]{border-color:var(--c-open)}
+.plan[data-state="ok"] .plan__ok{display:block;color:var(--c-open)}
+.plan[data-state="ok"] .plan__ok::before{content:"✓ "}
+.plan[data-state="no"]{opacity:.5}
+.plan[data-state="no"] .plan__ok{display:block;color:var(--c-muted)}
+.order__how{margin-top:6px;display:grid;gap:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:var(--btn-h);padding:0 24px;border-radius:var(--r-pill);font:inherit;font-weight:700;font-size:15px;text-decoration:none;cursor:pointer;border:1.5px solid transparent;transition:transform var(--d-fast)}
+.btn:active{transform:translateY(1px)}
+.btn svg{width:20px;height:20px}
+.btn--line{background:#06C755;color:#FFFFFF}
+.btn--primary{background:var(--c-primary);color:var(--c-on-primary)}
+.btn--ghost{border-color:var(--c-text);color:var(--c-text);background:none}
+.btn-row{display:flex;flex-wrap:wrap;gap:10px}
+
+/* shelf life */
+.shelf{list-style:none;padding:0;display:grid;gap:18px;max-width:760px}
+.shelf li{display:grid;grid-template-columns:8.5em minmax(0,1fr);gap:4px 16px;align-items:center}
+.shelf b{font-family:var(--f-head);font-weight:700}
+.shelf .bar{height:14px;border-radius:999px;background:var(--c-surface-2);position:relative;overflow:hidden}
+.shelf .bar i{position:absolute;inset:0 auto 0 0;width:var(--v);background:var(--c-pink);border-radius:999px;transform-origin:left;transition:transform 1s var(--e-out)}
+.shelf .val{grid-column:2;font-size:14px;color:var(--c-muted)}
+.shelf .val strong{color:var(--c-text);font-family:var(--f-en)}
+@media (prefers-reduced-motion: no-preference){ .shelf:not(.in) .bar i{transform:scaleX(0)} }
+
+/* voices */
+.voices{display:grid;gap:0;border-top:1px solid var(--c-border)}
+@media (min-width:900px){ .voices{grid-template-columns:repeat(3,minmax(0,1fr))} }
+.voice{margin:0;padding:26px 0;border-bottom:1px solid var(--c-border);display:grid;gap:12px;align-content:space-between}
+@media (min-width:900px){ .voice{padding:28px 28px 28px 0;border-bottom:0} .voice+.voice{border-left:1px solid var(--c-border);padding-left:28px} }
+.voice blockquote{margin:0;font-family:var(--f-head);font-weight:500;font-size:18px;line-height:1.85}
+.voice figcaption{font-size:12.5px;color:var(--c-muted)}
+
+/* access */
+.access{display:grid;gap:clamp(32px,5vw,64px)}
+@media (min-width:900px){ .access{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);align-items:start} }
+.access .photo{aspect-ratio:5/3;border-radius:var(--r-md)}
+.info{width:100%;border-collapse:collapse;font-size:15px}
+.info th,.info td{text-align:left;vertical-align:top;padding:12px 0;border-bottom:1px solid var(--c-border)}
+.info th{width:6.5em;color:var(--c-muted);font-weight:500;padding-right:12px}
+.week{display:flex;gap:6px;flex-wrap:wrap}
+.week span{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:700;border:1.5px solid var(--c-border);color:var(--c-muted)}
+.week span[data-open]{background:var(--c-text);color:var(--c-bg);border-color:var(--c-text)}
+.week span[data-today]{outline:3px solid var(--c-pink);outline-offset:2px}
+.yearend{margin-top:14px;padding:14px 16px;border-radius:var(--r-md);background:var(--c-surface);font-size:14px;display:grid;gap:2px}
+.yearend b{font-family:var(--f-head)}
+
+/* cta */
+.cta{background:var(--c-band);color:var(--c-on-band)}
+.cta__in{display:grid;gap:22px;padding-block:clamp(64px,9vw,112px);text-align:center;justify-items:center}
+.cta h2{font-family:var(--f-head);font-weight:700;font-size:var(--fs-h2);line-height:1.5;letter-spacing:.06em}
+.cta p{color:#D9CEC6;max-width:34em}
+.cta .btn--ghost{border-color:#F7F1EC;color:#F7F1EC}
+.cta .btn--primary{background:#F7F1EC;color:#2F2723}
+
+/* proposal section */
+.prop{background:#10151E;color:#E9EDF3}
+.prop__in{display:grid;gap:28px;padding-block:clamp(64px,9vw,104px)}
+.prop h2{font-family:var(--f-head);font-weight:700;font-size:clamp(24px,3vw,34px);line-height:1.5}
+.prop .en{color:#E5B232}
+.prop p{color:#A7B1BF;max-width:44em}
+.diff{list-style:none;padding:0;display:grid;gap:1px;background:#2A3445;border:1px solid #2A3445;border-radius:10px;overflow:hidden}
+@media (min-width:800px){ .diff{grid-template-columns:repeat(2,minmax(0,1fr))} }
+.diff li{background:#10151E;padding:16px 18px;display:grid;gap:4px;min-width:0}
+.diff small{font-size:12.5px;color:#7F8A99}
+.diff b{color:#F4F6FA}
+.diff span{font-size:14px;color:#A7B1BF}
+.footer{padding-block:32px calc(32px + 80px);font-size:13px;color:var(--c-muted);border-top:1px solid var(--c-border)}
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} *,*::before,*::after{animation-duration:1ms!important;transition-duration:1ms!important} }
+</style>
+</head>
+<body>
+
+<div class="pbar"><div class="wrap pbar__in">
+  <p><b>ご提案用のお試し版</b> <span>MC apartment さま向けに、戸石川悠喜（広島工業大学）が作成しました。公開・検索には出ていません。</span></p>
+  <button class="ptoggle" type="button" id="memoToggle" aria-pressed="false"><i aria-hidden="true"></i><span>提案のポイントを表示</span></button>
+</div></div>
+
+<header class="header">
+  <div class="wrap header__in">
+    <a class="logo" href="#top" aria-label="MC apartment トップへ"><b>MC apartment</b><small>muffin &amp; sweets</small></a>
+    <nav class="nav" aria-label="ページ内">
+      <a href="#lineup">お菓子</a><a href="#icing">アイシングクッキー</a><a href="#order">ご予約・オーダー</a><a href="#shelf">日持ち</a><a href="#access">お店の場所</a>
+    </nav>
+    <button class="menu-btn" type="button" id="menuBtn" aria-expanded="false" aria-controls="drawer"><span id="menuLabel">MENU</span><i aria-hidden="true"></i></button>
+  </div>
+</header>
+<div class="drawer" id="drawer" hidden><div class="wrap">
+  <ul>
+    <li><a href="#concept"><small>CONCEPT</small>お店のこと</a></li>
+    <li><a href="#lineup"><small>SWEETS</small>お菓子</a></li>
+    <li><a href="#icing"><small>ICING</small>アイシングクッキー</a></li>
+    <li><a href="#order"><small>ORDER</small>ご予約・オーダー</a></li>
+    <li><a href="#shelf"><small>GIFT</small>日持ちの目安</a></li>
+    <li><a href="#access"><small>ACCESS</small>お店の場所</a></li>
+  </ul>
+</div></div>
+
+<main id="main">
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <figure class="photo hero__photo"><img src="https://46182494.fs1.hubspotusercontent-na1.net/hub/46182494/hubfs/image_6483441_15.jpg?width=1600&amp;name=image_6483441_15.jpg" alt="いろいろな種類のマフィンを上から並べた写真。ベリー、抹茶、チョコなど" width="1200" height="1200" fetchpriority="high"></figure>
+    <div class="hero__shade" aria-hidden="true"></div>
+    <div class="hero__copy"><div class="wrap">
+      <p class="hero__en" aria-hidden="true"><span>Muffin</span><span><em>&amp;</em> Sweets</span></p>
+      <h1 id="hero-title"><span class="nb">毎日のおやつに、プレゼントに。</span><span class="nb">五日市駅のマフィンと焼き菓子。</span></h1>
+    </div></div>
+  </section>
+  <div class="today"><div class="wrap today__in">
+    <p class="status" id="status" data-state="closed" aria-live="polite"><i aria-hidden="true"></i><span id="statusText">営業日を確認しています</span></p>
+    <p>水・木・金・土 10:00〜17:00</p>
+    <a href="#access">お店の場所 →</a>
+  </div></div>
+  <div class="notice" role="note"><div class="wrap notice__in"><b>NEWS</b><p><strong>年末年始のお休み</strong>　12/27（日）・12/30（水）〜1/7（木）。12/28（月）・12/29（火）は営業します。</p></div></div>
+  <div class="wrap"><aside class="memo" aria-label="提案のポイント"><b>提案のポイント｜最初の画面</b><p>今のサイトは棚の写真から始まりますが、MC apartmentさんの一番の魅力は色とりどりのマフィン。最初の画面をマフィンの写真にして、「何のお店か」が1秒で伝わるようにしました。「営業中／今日はお休み」は曜日と年末年始に合わせて自動で切り替わります。</p></aside></div>
+
+  <section class="section" id="concept" aria-labelledby="concept-title">
+    <div class="wrap concept">
+      <figure class="photo"><img src="https://46182494.fs1.hubspotusercontent-na1.net/hub/46182494/hubfs/IMG_8136.jpeg?width=1200&amp;name=IMG_8136.jpeg" alt="白い店内の棚に、焼き菓子やマフィンが並んでいる" width="1170" height="702" loading="lazy"></figure>
+      <div class="concept__body">
+        <p class="en">Concept</p>
+        <div class="since"><b>12</b><span>年目<br>2024年秋、五日市駅の北側へ</span></div>
+        <h2 class="h2" id="concept-title"><span class="nb">材料にこだわり、</span><span class="nb">ひとつずつ手作りで。</span></h2>
+        <p>五日市中央で12年。2024年の秋に、五日市駅から歩いてすぐの場所へ移転しました。添加物や保存料は使わず、ていねいにひとつずつ焼いています。ほっと一息つける、毎日のおやつに。</p>
+        <ul class="materials" aria-label="使っている材料">
+          <li><small>小麦粉</small><b>北海道産</b></li>
+          <li><small>バター</small><b>よつ葉バター</b></li>
+          <li><small>砂糖</small><b>ミネラル豊富なきび糖</b></li>
+          <li><small>ベーキングパウダー</small><b>アルミフリー</b></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap"><aside class="memo" aria-label="提案のポイント"><b>提案のポイント｜お店のこと</b><p>今のサイトでは別のページにある材料のこだわりを、トップに持ってきました。「12年」「北海道産小麦」「よつ葉バター」のように、ほかのお店が言えない具体的な言葉で伝えています。</p></aside></div>
+  </section>
+
+  <section class="section section--tint" id="lineup" aria-labelledby="lineup-title">
+    <div class="wrap">
+      <div class="head"><p class="en">Sweets</p><h2 class="h2" id="lineup-title">はじめてなら、この3つから</h2></div>
+      <ol class="lineup">
+        <li class="item">
+          <figure class="photo"><span class="item__no" aria-hidden="true">01</span><img src="https://46182494.fs1.hubspotusercontent-na1.net/hub/46182494/hubfs/mc2018ss.jpg?width=900&amp;name=mc2018ss.jpg" alt="ナッツやチョコがのった、いろいろな味のマフィン" width="1200" height="1200" loading="lazy"></figure>
+          <h3>週替わりのマフィン</h3>
+          <p>プレーン、抹茶、ココア、紅茶、チーズなど。味は毎週かわります。今週のマフィンは、Instagramのストーリーでお知らせしています。</p>
+          <a class="more" href="https://www.instagram.com/mc_apartment/" target="_blank" rel="noopener">今週のマフィンを見る（Instagram）↗</a>
+        </li>
+        <li class="item">
+          <figure class="photo"><span class="item__no" aria-hidden="true">02</span><img src="https://46182494.fs1.hubspotusercontent-na1.net/hub/46182494/hubfs/IMG_1302.jpeg?width=900&amp;name=IMG_1302.jpeg" alt="くまやうさぎの顔のアイシングクッキーが並んでいる" width="1200" height="1200" loading="lazy"></figure>
+          <h3>アイシングクッキー</h3>
+          <p>色づけは天然の色素だけ。くま、お花、りぼん、数字など、お誕生日や贈り物にあわせて選べます。</p>
+          <a class="more" href="#icing">種類と価格を見る ↓</a>
+        </li>
+        <li class="item">
+          <figure class="photo"><span class="item__no" aria-hidden="true">03</span><img src="https://46182494.fs1.hubspotusercontent-na1.net/hub/46182494/hubfs/IMG_8134.jpeg?width=900&amp;name=IMG_8134.jpeg" alt="ロゴ入りの丸いクッキー缶と焼き菓子" width="1169" height="701" loading="lazy"></figure>
+          <h3>焼き菓子・クッキー缶</h3>
+          <p>パウンドケーキやクッキーなど、日持ちのする焼き菓子。ギフトやお返しには、オンラインショップからも。</p>
+          <a class="more" href="https://mcapartment.thebase.in/" target="_blank" rel="noopener">オンラインショップへ ↗</a>
+        </li>
+      </ol>
+      <div class="cake">
+        <figure class="photo"><img src="https://46182494.fs1.hubspotusercontent-na1.net/hub/46182494/hubfs/IMG_8131.jpeg?width=300&amp;name=IMG_8131.jpeg" alt="クリームでおおわれたホールケーキ" width="1168" height="701" loading="lazy"></figure>
+        <p><b>ケーキは店頭だけ。</b>チーズケーキ、ガトーショコラ、マフォンなど。当日中にお召し上がりください。</p>
+      </div>
+      <p class="note" style="margin-top:14px">※マフィン・焼き菓子・ケーキの価格は、店頭でご確認ください（お試し版のため未掲載）。</p>
+      <aside class="memo" aria-label="提案のポイント"><b>提案のポイント｜お菓子</b><p>今のサイトでは「マフィン・焼き菓子・アイシングクッキー」と文字だけが並んでいます。写真と一緒に「はじめてならこの3つ」と絞ると、初めての人が迷いません。週替わりのマフィンは、Instagramのストーリーへ自然につなげました。</p></aside>
+    </div>
+  </section>
+
+  <section class="section" id="icing" aria-labelledby="icing-title">
+    <div class="wrap">
+      <div class="head"><p class="en">Icing cookies</p><h2 class="h2" id="icing-title">天然色素だけの、<br>アイシングクッキー</h2><p class="lead">お誕生日、出産祝い、ちょっとしたお礼に。プレートの文字も変えられます。</p></div>
+      <div class="icing">
+        <div class="strip" tabindex="0" aria-label="アイシングクッキーの写真（横にスクロールできます）">
+          <figure><div class="photo"><img src="https://46182494.fs1.hubspotusercontent-na1.net/hub/46182494/hubfs/IMG_8133.jpeg?width=700&amp;name=IMG_8133.jpeg" alt="赤ちゃんや数字のアイシングクッキー" loading="lazy"></div><figcaption>赤ちゃん・ナンバー</figcaption></figure>
+          <figure><div class="photo"><img src="https://46182494.fs1.hubspotusercontent-na1.net/hub/46182494/hubfs/mc20181.jpg?width=700&amp;name=mc20181.jpg" alt="ピンクのお花のアイシングクッキー" loading="lazy"></div><figcaption>お花</figcaption></figure>
+          <figure><div class="photo"><img src="https://46182494.fs1.hubspotusercontent-na1.net/hub/46182494/hubfs/IMG_1302.jpeg?width=700&amp;name=IMG_1302.jpeg" alt="くまやうさぎのアイシングクッキー" loading="lazy"></div><figcaption>くま</figcaption></figure>
+          <figure><div class="photo"><img src="https://46182494.fs1.hubspotusercontent-na1.net/hub/46182494/hubfs/mc.jpg?width=700&amp;name=mc.jpg" alt="アイシングクッキーと焼き菓子の詰め合わせ" loading="lazy"></div><figcaption>詰め合わせ</figcaption></figure>
+        </div>
+        <div>
+          <table class="plist">
+            <caption>定番アイシングクッキー（税込）</caption>
+            <tbody>
+              <tr><th scope="row">ほし・ハート・お花・りぼん</th><td class="price">各508円</td></tr>
+              <tr><th scope="row">はっぱ</th><td class="price">550円</td></tr>
+              <tr><th scope="row">くま（大）</th><td class="price">605円</td></tr>
+              <tr><th scope="row">くま（小）・スワン</th><td class="price">各508円</td></tr>
+              <tr><th scope="row">男の子・女の子</th><td class="price">各702円</td></tr>
+              <tr><th scope="row">赤ちゃん</th><td class="price">551円</td></tr>
+              <tr><th scope="row">ナンバー</th><td class="price">302円</td></tr>
+              <tr><th scope="row">プレート</th><td class="price">400円</td></tr>
+              <tr><th scope="row">ベースなしプレート</th><td class="price">205円</td></tr>
+            </tbody>
+          </table>
+          <div class="icing__note"><p class="note">日持ちは作ってから約1か月。オーダーのアイシングクッキーも同じです。</p><p class="note">価格は公式サイトの掲載をもとにしています。</p></div>
+        </div>
+      </div>
+      <aside class="memo" aria-label="提案のポイント"><b>提案のポイント｜アイシングクッキー</b><p>写真は横にスワイプして見られるようにして、価格は1つの表にまとめました。同じ価格のものはまとめて、スマホでも縦に長くなりすぎないようにしています。</p></aside>
+    </div>
+  </section>
+
+  <section class="section section--tint" id="order" aria-labelledby="order-title">
+    <div class="wrap">
+      <div class="head"><p class="en">Order</p><h2 class="h2" id="order-title">いつまでに必要ですか？</h2><p class="lead">1個からご予約できます。受け取りたい日を選ぶと、間に合うオーダーの種類が分かります。</p></div>
+      <div class="order">
+        <div class="ask">
+          <label for="pickDate">受け取りたい日</label>
+          <input type="date" id="pickDate">
+          <div class="quick" role="group" aria-label="よく使う日にち">
+            <button type="button" data-days="3" aria-pressed="false">3日後</button>
+            <button type="button" data-days="7" aria-pressed="false">1週間後</button>
+            <button type="button" data-days="30" aria-pressed="false">1か月後</button>
+          </div>
+          <p class="answer" id="answer" aria-live="polite">日にちを選ぶと、ここに結果が出ます。</p>
+        </div>
+        <div>
+          <ol class="plans">
+            <li class="plan" id="plan-semi" data-days="3"><h3>セミオーダー</h3><span class="plan__lead">3日前まで</span><p>定番のお菓子から選んでご予約。</p><span class="plan__ok"></span></li>
+            <li class="plan" id="plan-plus" data-days="7"><h3>セミオーダーPlus</h3><span class="plan__lead">1週間前まで</span><p>定番のお菓子の色や文字を、ご希望に合わせて。</p><span class="plan__ok"></span></li>
+            <li class="plan" id="plan-full" data-days="30"><h3>フルオーダー</h3><span class="plan__lead">1か月前まで</span><p>オリジナルのデザインで。翌月分は、毎月はじめに公式LINEで受け付けます。</p><span class="plan__ok"></span></li>
+          </ol>
+          <div class="order__how">
+            <p class="note">店頭に在庫があれば、直前のご予約に対応できることもあります。まずはLINEでご相談ください。</p>
+            <div class="btn-row">
+              <a class="btn btn--line" href="https://page.line.me/mcapartment" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s6-3.5 8.2-6C21.4 14.4 22 12.8 22 11c0-4.4-4.5-8-10-8z"/></svg>LINEで予約・相談</a>
+              <a class="btn btn--ghost" href="https://mcapartment.thebase.in/" target="_blank" rel="noopener">オンラインショップ</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <aside class="memo" aria-label="提案のポイント"><b>提案のポイント｜ご予約・オーダー</b><p>今のサイトではオーダーの説明が3つのページに分かれています。お客さんが本当に知りたいのは「その日に間に合うか」なので、日にちを選ぶだけで、間に合うオーダーに✓が付くようにしました。そのままLINEで予約できます。</p></aside>
+    </div>
+  </section>
+
+  <section class="section" id="shelf" aria-labelledby="shelf-title">
+    <div class="wrap">
+      <div class="head"><p class="en">Gift</p><h2 class="h2" id="shelf-title">贈り物に。日持ちの目安</h2><p class="lead">渡す日から逆算して選べるように。</p></div>
+      <ul class="shelf" id="shelfList">
+        <li><b>ケーキ</b><span class="bar" aria-hidden="true"><i style="--v:4%"></i></span><span class="val"><strong>当日</strong>（店頭のみ）</span></li>
+        <li><b>マフィン</b><span class="bar" aria-hidden="true"><i style="--v:10%"></i></span><span class="val"><strong>3日</strong>（フルーツ・クリーム入りは2日）</span></li>
+        <li><b>焼き菓子</b><span class="bar" aria-hidden="true"><i style="--v:47%"></i></span><span class="val">約<strong>2週間</strong>〜（商品ごとに表示）</span></li>
+        <li><b>アイシング<br>クッキー</b><span class="bar" aria-hidden="true"><i style="--v:100%"></i></span><span class="val">約<strong>1か月</strong>（オーダー品も同じ）</span></li>
+      </ul>
+      <aside class="memo" aria-label="提案のポイント"><b>提案のポイント｜日持ち</b><p>今のサイトのメニューページにある日持ちの情報を、贈り物を選ぶ人向けにバーの長さで見せました。「遠方の人に送りたい」ならアイシングクッキーや焼き菓子、と一目で分かります。</p></aside>
+    </div>
+  </section>
+
+  <section class="section section--tint" id="voice" aria-labelledby="voice-title">
+    <div class="wrap">
+      <div class="head"><p class="en">Voice</p><h2 class="h2" id="voice-title">いただいた声</h2></div>
+      <div class="voices">
+        <figure class="voice"><blockquote>白が基調のとってもおしゃれな店内に、バターと甘い香りに包まれる素敵なお店。</blockquote><figcaption>食べログのクチコミより</figcaption></figure>
+        <figure class="voice"><blockquote>くまさんのアイシングクッキーがメインのクッキー缶がかわいすぎます。</blockquote><figcaption>食べログのクチコミより</figcaption></figure>
+        <figure class="voice"><blockquote>毎朝焼き上げるマフィンは甘さ控えめで、種類も豊富。</blockquote><figcaption>ままぴかぶー「広島のマフィンがおいしいお店」の紹介より（要約）</figcaption></figure>
+      </div>
+      <p class="note" style="margin-top:16px">※正式に公開する際は、お店とクチコミ投稿者の確認のうえで掲載します。</p>
+    </div>
+  </section>
+
+  <section class="section" id="access" aria-labelledby="access-title">
+    <div class="wrap access">
+      <figure class="photo"><img src="https://46182494.fs1.hubspotusercontent-na1.net/hub/46182494/hubfs/IMG_8137.jpeg?width=1200&amp;name=IMG_8137.jpeg" alt="ガラスのショーケースに焼き菓子が並ぶ店内" width="1170" height="702" loading="lazy"></figure>
+      <div>
+        <div class="head" style="margin-bottom:24px"><p class="en">Access</p><h2 class="h2" id="access-title">五日市駅から、歩いて約3分</h2></div>
+        <table class="info">
+          <tr><th scope="row">住所</th><td>広島県広島市佐伯区五日市2丁目9-24-102<br><a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%BA%83%E5%B3%B6%E7%9C%8C%E5%BA%83%E5%B3%B6%E5%B8%82%E4%BD%90%E4%BC%AF%E5%8C%BA%E4%BA%94%E6%97%A5%E5%B8%822%E4%B8%81%E7%9B%AE9-24" target="_blank" rel="noopener">Googleマップで開く ↗</a></td></tr>
+          <tr><th scope="row">営業日</th><td><div class="week" id="week" aria-label="営業日：水・木・金・土"><span data-d="1">月</span><span data-d="2">火</span><span data-d="3" data-open>水</span><span data-d="4" data-open>木</span><span data-d="5" data-open>金</span><span data-d="6" data-open>土</span><span data-d="0">日</span></div><p style="margin-top:6px">10:00〜17:00</p></td></tr>
+          <tr><th scope="row">駐車場</th><td>お店の前に2台</td></tr>
+          <tr><th scope="row">お支払い</th><td>現金・PayPay・一部クレジットカード</td></tr>
+          <tr><th scope="row">お電話</th><td><span class="price">082-530-4210</span></td></tr>
+        </table>
+        <div class="yearend"><b>年末年始のお休み</b><p>12/27（日）、12/30（水）〜1/7（木）はお休み。12/28（月）・12/29（火）は営業します。</p></div>
+      </div>
+    </div>
+    <div class="wrap"><aside class="memo" aria-label="提案のポイント"><b>提案のポイント｜お店の場所</b><p>営業日を丸で並べ、今日の曜日に印が付くようにしました。駐車場・支払い方法など、来る前に知りたいことを1か所にまとめています。</p></aside></div>
+  </section>
+
+  <section class="cta" aria-labelledby="cta-title">
+    <div class="wrap cta__in">
+      <p class="en" style="color:#E8A3B4">Contact</p>
+      <h2 id="cta-title">ご予約・ご相談は、<br>公式LINEから</h2>
+      <p>オーダーのご相談、まとめ買い、ギフトのことなど、お気軽にどうぞ。</p>
+      <div class="btn-row" style="justify-content:center">
+        <a class="btn btn--line" href="https://page.line.me/mcapartment" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s6-3.5 8.2-6C21.4 14.4 22 12.8 22 11c0-4.4-4.5-8-10-8z"/></svg>LINEで相談する</a>
+        <a class="btn btn--primary" href="https://mcapartment.thebase.in/" target="_blank" rel="noopener">オンラインショップ</a>
+        <a class="btn btn--ghost" href="https://www.instagram.com/mc_apartment/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="prop" aria-labelledby="prop-title">
+    <div class="wrap prop__in">
+      <p class="en">For MC apartment</p>
+      <h2 id="prop-title">今のホームページから、変えたところ</h2>
+      <p>今のホームページにある情報だけを使って、お客さんが知りたい順番に並べ直しました。写真も、今のホームページに載っているものを使っています。</p>
+      <ul class="diff">
+        <li><small>今のサイト</small><b>最初の画面が棚の写真</b><span>→ マフィンの写真と「五日市駅のマフィンと焼き菓子」で、何のお店か1秒で伝わる</span></li>
+        <li><small>今のサイト</small><b>お菓子の名前が文字だけ</b><span>→ 写真つきで「はじめてならこの3つ」。週替わりマフィンはInstagramへ</span></li>
+        <li><small>今のサイト</small><b>オーダーの説明が3ページに分かれている</b><span>→ 受け取りたい日を選ぶだけで、間に合うオーダーが分かる</span></li>
+        <li><small>今のサイト</small><b>日持ちがメニューの中に埋もれている</b><span>→ 贈り物を選ぶ人向けに、日持ちを一目で</span></li>
+        <li><small>今のサイト</small><b>営業日は文字だけ</b><span>→ 「営業中／今日はお休み」を曜日と年末年始に合わせて自動表示</span></li>
+        <li><small>今のサイト</small><b>LINE・ショップのボタンが上だけ</b><span>→ スマホでも、いつでも押せる位置にLINEとショップのボタン</span></li>
+      </ul>
+      <p>上の「提案のポイントを表示」を押すと、各セクションにどう考えて作ったかのメモが出ます。気になるところ、変えたいところがあれば、何でもお聞かせください。（戸石川悠喜）</p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer"><div class="wrap">
+  <p>MC apartment（エムシーアパートメント）｜広島市佐伯区五日市2丁目9-24-102</p>
+  <p>このページはご提案用のお試し版です。掲載している情報と写真は、MC apartmentさまの公式サイト・公式LINE・公開されているクチコミをもとにしています。</p>
+</div></footer>
+
+<div class="fab" aria-label="すぐに使うボタン">
+  <a class="fab__line" href="https://page.line.me/mcapartment" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s6-3.5 8.2-6C21.4 14.4 22 12.8 22 11c0-4.4-4.5-8-10-8z"/></svg>LINE</a>
+  <a class="fab__shop" href="https://mcapartment.thebase.in/" target="_blank" rel="noopener">Online<br>Shop</a>
+</div>
+
+<script>
+(function(){
+  // 日本時間の今日
+  function tokyo(){var p=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Tokyo',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',weekday:'short',hour12:false}).formatToParts(new Date()),o={};
+    p.forEach(function(x){o[x.type]=x.value});var days={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6};
+    return {ymd:o.year+'-'+o.month+'-'+o.day,day:days[o.weekday],min:(parseInt(o.hour,10)%24)*60+parseInt(o.minute,10)}}
+  var t=tokyo();
+  // 年末年始（公式サイトの告知）
+  var CLOSED={'2026-12-27':1,'2026-12-30':1,'2026-12-31':1,'2027-01-01':1,'2027-01-02':1,'2027-01-03':1,'2027-01-04':1,'2027-01-05':1,'2027-01-06':1,'2027-01-07':1};
+  var EXTRA={'2026-12-28':1,'2026-12-29':1};
+  function isOpenDay(ymd,day){if(CLOSED[ymd])return false;if(EXTRA[ymd])return true;return day>=3&&day<=6}
+  var st=document.getElementById('status'),tx=document.getElementById('statusText'),open=isOpenDay(t.ymd,t.day),state='closed',msg;
+  if(!open){msg=CLOSED[t.ymd]?'今日は年末年始のお休みです':'今日はお休みです（営業は水〜土）';}
+  else if(t.min<600){msg='今日は10:00から営業します';}
+  else if(t.min<1020){state='open';msg='営業中　今日は17:00まで';}
+  else{msg='今日の営業は終了しました';}
+  st.setAttribute('data-state',state);tx.textContent=msg;
+  var td=document.querySelector('#week [data-d="'+t.day+'"]');if(td){td.setAttribute('data-today','');td.setAttribute('title','今日')}
+
+  // メニュー
+  var mb=document.getElementById('menuBtn'),dr=document.getElementById('drawer'),ml=document.getElementById('menuLabel');
+  function setD(o){mb.setAttribute('aria-expanded',String(o));dr.hidden=!o;ml.textContent=o?'CLOSE':'MENU';document.body.classList.toggle('drawer-open',o)}
+  mb.addEventListener('click',function(){setD(mb.getAttribute('aria-expanded')!=='true')});
+  dr.addEventListener('click',function(e){if(e.target.closest('a'))setD(false)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&mb.getAttribute('aria-expanded')==='true'){setD(false);mb.focus()}});
+
+  // オーダーの選び方
+  var input=document.getElementById('pickDate'),ans=document.getElementById('answer'),plans=[].slice.call(document.querySelectorAll('.plan')),quick=[].slice.call(document.querySelectorAll('.quick button'));
+  function toDate(ymd){var a=ymd.split('-');return Date.UTC(+a[0],+a[1]-1,+a[2])}
+  function addDays(n){var d=new Date(toDate(t.ymd)+n*864e5);return d.toISOString().slice(0,10)}
+  input.min=t.ymd;
+  function judge(){
+    quick.forEach(function(b){b.setAttribute('aria-pressed',String(input.value&&addDays(+b.dataset.days)===input.value))});
+    if(!input.value){plans.forEach(function(p){p.removeAttribute('data-state')});ans.textContent='日にちを選ぶと、ここに結果が出ます。';return}
+    var n=Math.round((toDate(input.value)-toDate(t.ymd))/864e5);
+    if(n<0){ans.textContent='過ぎた日にちです。もう一度選んでください。';plans.forEach(function(p){p.removeAttribute('data-state')});return}
+    var ok=0;plans.forEach(function(p){var need=+p.dataset.days,good=n>=need;p.setAttribute('data-state',good?'ok':'no');p.querySelector('.plan__ok').textContent=good?'この日に間に合います':'あと'+(need-n)+'日早くご予約が必要です';if(good)ok++});
+    var d=new Date(toDate(input.value)),w='日月火水木金土'[d.getUTCDay()],shop=isOpenDay(input.value,d.getUTCDay());
+    var lead='<b>'+(d.getUTCMonth()+1)+'月'+d.getUTCDate()+'日（'+w+'）</b>は今日から'+n+'日後。';
+    ans.innerHTML=lead+(ok?'✓が付いたオーダーが間に合います。':'店頭の在庫で対応できることもあるので、LINEでご相談ください。')+(shop?'':'<br>※この日はお店がお休みです。受け取り日はご相談ください。');
+  }
+  input.addEventListener('change',judge);input.addEventListener('input',judge);
+  quick.forEach(function(b){b.addEventListener('click',function(){input.value=addDays(+b.dataset.days);judge()})});
+
+  // 日持ちのバー
+  var sl=document.getElementById('shelfList');
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){sl.classList.add('in');io.disconnect()}})},{threshold:.3});io.observe(sl)}else{sl.classList.add('in')}
+
+  // 提案のポイント
+  var mt=document.getElementById('memoToggle'),root=document.documentElement;
+  function setM(on){root.toggleAttribute('data-memo',on);mt.setAttribute('aria-pressed',String(on));mt.lastChild.textContent=on?'提案のポイントを表示中':'提案のポイントを表示'}
+  mt.addEventListener('click',function(){setM(!root.hasAttribute('data-memo'))});
+})();
+</script>
+</body>
+</html>
