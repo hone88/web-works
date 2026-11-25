@@ -291,7 +291,7 @@ button{font:inherit;color:inherit}
 .opt .ck path{fill:none;stroke:#fff;stroke-width:2.5;stroke-dasharray:24;stroke-dashoffset:24;transition:stroke-dashoffset var(--d-base) var(--e-out) 80ms}
 .opt[aria-checked=true] .ck{background:var(--c-primary);border-color:var(--c-primary);transform:scale(1.1)}
 .opt[aria-checked=true] .ck path{stroke-dashoffset:0}
-.opt .pr{font:400 clamp(36px,4vw,52px)/1 var(--f-display);color:var(--c-secondary)}
+.opt .pr{font:400 clamp(30px,4vw,52px)/1 var(--f-display);color:var(--c-secondary)}
 .opt h4{font:400 var(--fs-h4)/1.5 var(--f-mincho);color:#fff;margin-top:8px}
 .opt p{font-size:var(--fs-sm);margin-top:6px}
 
@@ -337,7 +337,7 @@ button{font:inherit;color:inherit}
 .thanks h2{font:400 clamp(40px,7vw,96px)/1.3 var(--f-mincho);color:var(--c-secondary);letter-spacing:.1em}
 .thanks p{margin-top:16px}
 .thanks .btn{margin-top:40px}
-.toast{position:fixed;left:50%;bottom:24px;z-index:95;visibility:hidden;transform:translate(-50%,calc(100% + 40px));background:var(--c-secondary);color:var(--c-bg);padding:12px 24px;border-radius:var(--r-pill);font-size:var(--fs-sm);transition:transform var(--d-base) var(--e-out),visibility 0s var(--d-base)}
+.toast{max-width:calc(100vw - 32px);width:max-content;text-align:center;line-height:1.5;position:fixed;left:50%;bottom:24px;z-index:95;visibility:hidden;transform:translate(-50%,calc(100% + 40px));background:var(--c-secondary);color:var(--c-bg);padding:12px 24px;border-radius:var(--r-pill);font-size:var(--fs-sm);transition:transform var(--d-base) var(--e-out),visibility 0s var(--d-base)}
 .toast.show{visibility:visible;transform:translate(-50%,0);transition:transform var(--d-base) var(--e-out)}
 
 /* ===== Footer（EVERINGのスレート） ===== */
@@ -382,6 +382,21 @@ footer{background:var(--c-slate);color:#fff;font-family:var(--f-label);letter-sp
 .sp-dl dt{color:var(--c-muted)}.sp-dl dd{margin:0;color:var(--c-secondary)}
 .sp-acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
 @media(max-width:899px){.sp-body{grid-template-columns:1fr}}
+
+/* ディナー候補 */
+.optw{border-bottom:1px solid var(--c-border);padding-bottom:20px}
+.optw .opt{border-bottom:0;padding-bottom:12px}
+.otag{display:table;font:400 12px var(--f-label);letter-spacing:.08em;color:var(--c-secondary);border:1px solid var(--c-border);padding:3px 10px;border-radius:var(--r-pill);margin-bottom:12px}
+.opt[aria-checked=true] .otag{background:var(--c-primary);border-color:var(--c-primary);color:#fff}
+.opts-pt{margin:12px 0 0;padding:0;list-style:none;font-size:var(--fs-sm)}
+.opts-pt li{position:relative;padding-left:1.2em;line-height:1.8;color:var(--c-body)}
+.opts-pt li::before{content:"";position:absolute;left:0;top:.75em;width:6px;height:6px;border-radius:50%;background:var(--c-primary)}
+.onote{font-size:var(--fs-cap)!important;color:var(--c-muted)!important;margin-top:10px!important}
+.omap{display:inline-flex;align-items:center;min-height:44px;margin-left:48px;font:400 13px var(--f-label);letter-spacing:.06em;color:var(--c-secondary);border-bottom:1px solid var(--c-secondary)}
+.pair{margin-top:24px;font:400 clamp(20px,2.2vw,26px)/1.5 var(--f-mincho);color:var(--c-secondary)}
+.dname{display:block;font-size:12px;color:var(--c-muted);line-height:1.3}
+.brow.flash{animation:flash 1s var(--e-out)}
+@keyframes flash{0%{background:rgba(188,22,22,.25)}100%{background:transparent}}
 /* magnetic */
 .mag{transition:transform var(--d-base) var(--e-out)}
 
@@ -542,8 +557,9 @@ footer{background:var(--c-slate);color:#fff;font-family:var(--f-label);letter-sp
 <section class="sec" id="dinner"><div class="wrap two" style="margin-top:0">
   <div>
     <p class="label">記念日の夜</p>
-    <h2 class="dh" style="margin-top:12px" aria-label="町家の灯りの中で、少しいいごはんを。"><span class="dot" aria-hidden="true"></span><span aria-hidden="true"><span class="mask"><span>町家の灯りの中で、</span></span><span class="mask" style="--i:1"><span>少しいいごはんを。</span></span></span></h2>
-    <p class="body fade" style="--i:2;margin-top:32px;max-width:28em;font-size:14px;line-height:1.8">1日目の夜は先斗町か祇園で、ひとり3,000〜4,000円くらいの京料理。乾杯したら、そのままランタンを見に行きます。どっちがいいか、選んでほしい。25日はクリスマスで混むので、決まったらすぐ予約します。</p>
+    <h2 class="dh" style="margin-top:12px" aria-label="100年の洋館で、少しいいごはんを。"><span class="dot" aria-hidden="true"></span><span aria-hidden="true"><span class="mask"><span>100年の洋館で、</span></span><span class="mask" style="--i:1"><span>少しいいごはんを。</span></span></span></h2>
+    <p class="body fade" style="--i:2;margin-top:32px;max-width:28em;font-size:14px;line-height:1.8">洋食が中心で、懐石みたいにかしこまらず、でも記念日らしい特別感がある店を選びました。ひとり3,000〜4,000円、ふたりで1万円以内が目安。食べたら東本願寺のランタンへ（タクシーで約15分）。選ぶと、下の予算も変わります。</p>
+    <p class="pair fade" id="pair" aria-live="polite"></p>
   </div>
   <div class="opts fade" id="opts" role="radiogroup" aria-label="ディナーの候補"></div>
 </div></section>
@@ -650,7 +666,7 @@ $('evlines').innerHTML=['詰め込まなくていい。','急がなくていい�
 
 /* ---------- 16. 分割バナー / 17. Dayシート ---------- */
 const D=[
-{d:'Day 1',date:'12.25 FRI',c:'鳥居と坂道と、ランタンの夜。',s:'伏見・東山・先斗町',bg:'#2a1414',h:'着いたらすぐ南の伏見へ。夕方は東山を歩いて、夜はディナーとランタン。',i:[['8:30','広島駅からのぞみで京都へ','駅でコーヒーを買って乗る。'],['10:15','京都着・荷物をホテルへ','チェックイン前でも荷物だけ預けて身軽に。'],['10:45','伏見稲荷大社・千本鳥居','上まで登らず、四ツ辻あたりで引き返す。'],['12:30','参道でお昼','稲荷寿司やきつねうどんで軽めに。'],['14:00','清水寺から二年坂・三年坂へ','清水の舞台からの冬景色。拝観300円。坂道でおだんごを、お店の前で。'],['16:00','八坂神社・祇園 花見小路','夕暮れの石畳を歩く。'],['17:30','記念日ディナー','町家で京料理。お店はディナーの欄で選んでほしい。',1],['19:30','スカイランタン（東本願寺前）','ゴスペルの生演奏に合わせてランタンを空へ。雨の日は中止。',1],['21:00','ホテルへ','']]},
+{d:'Day 1',date:'12.25 FRI',c:'鳥居と坂道と、ランタンの夜。',s:'伏見・東山・四条大橋',bg:'#2a1414',h:'着いたらすぐ南の伏見へ。夕方は東山を歩いて、夜はディナーとランタン。',i:[['8:30','広島駅からのぞみで京都へ','駅でコーヒーを買って乗る。'],['10:15','京都着・荷物をホテルへ','チェックイン前でも荷物だけ預けて身軽に。'],['10:45','伏見稲荷大社・千本鳥居','上まで登らず、四ツ辻あたりで引き返す。'],['12:30','参道でお昼','稲荷寿司やきつねうどんで軽めに。'],['14:00','清水寺から二年坂・三年坂へ','清水の舞台からの冬景色。拝観300円。坂道でおだんごを、お店の前で。'],['16:00','八坂神社・祇園 花見小路','夕暮れの石畳を歩く。'],['17:00','記念日ディナー（四条大橋のたもと）','第1候補は100年続く洋食の「レストラン菊水」。19時前に出て、タクシーで東本願寺へ（約15分）。',1],['19:30','スカイランタン（東本願寺前）','ゴスペルの生演奏に合わせてランタンを空へ。雨の日は中止。',1],['21:00','ホテルへ','']]},
 {d:'Day 2',date:'12.26 SAT',c:'竹林の朝と、江戸の町の夜。',s:'嵐山・太秦',bg:'#14211a',h:'朝いちばんの嵐山は人が少なくて静か。夕方からは灯りのともる映画村へ。',i:[['8:30','嵐山・竹林の小径','朝のうちに歩くと、竹の音だけが聞こえる。'],['9:30','渡月橋・嵐山の商店街','川沿いを散歩して、コロッケやみたらしで食べ歩き。'],['12:00','嵐山でお昼','そばや定食で。'],['13:30','嵐電で移動・ホテルで休憩','一両だけのレトロな路面電車。夜に備えて一回休む。'],['17:00','太秦映画村 ナイト入村','ナイト券2,000円。「江戸時代の京」の町並みを夜に歩き、食べ歩きスポットで晩ごはん代わりに。',1],['21:00','ホテルへ','']]},
 {d:'Day 3',date:'12.27 SUN',c:'京の台所で食べ歩いて、帰る。',s:'錦市場・おみやげ',bg:'#15182a',h:'ゆっくり起きて、錦市場とおみやげ。夕方の新幹線で広島へ。',i:[['10:00','チェックアウト・荷物を駅のロッカーへ',''],['10:30','錦市場で食べ歩き','豆乳ドーナツ、湯葉クリームコロッケ、だし巻き。歩きながらは食べない。',1],['12:30','寺町・新京極でおみやげ','錦市場のすぐ東。'],['14:00','京都駅でお昼・最後のおみやげ',''],['15:30','京都駅からのぞみで広島へ','17時すぎに広島着。']]}];
 const art=[
@@ -689,13 +705,13 @@ const S=[
 {id:'inari',n:'伏見稲荷大社',a:'伏見',d:[1],t:'千本鳥居。JR奈良線で京都駅から5分の稲荷駅すぐ。',f:['無料','Day 1 10:45〜'],q:'伏見稲荷大社'},
 {id:'kiyo',n:'清水寺',a:'祇園・東山',d:[1],t:'清水の舞台からの冬景色。帰りは二年坂・三年坂へ。',f:['拝観 300円','Day 1 14:00〜'],q:'清水寺'},
 {id:'gion',n:'八坂神社・花見小路',a:'祇園・東山',d:[1],t:'夕暮れの石畳がいちばんきれいな時間に歩く。',f:['無料','Day 1 16:00〜'],q:'八坂神社'},
-{id:'ponto',n:'先斗町',a:'四条河原町',d:[1],t:'鴨川沿いの細い路地。記念日の夜ごはんはこのあたりの町家で。',f:['3,000〜4,000円','Day 1 17:30〜'],q:'先斗町'},
+{id:'ponto',n:'レストラン菊水（ディナー）',a:'四条大橋',d:[1],t:'四条大橋のたもと、1916年創業の洋食レストラン。向かいには候補の東華菜館も。記念日の夜ごはんはここで。',f:['ひとり3,000〜4,000円','Day 1 17:00〜'],q:'レストラン菊水 京都'},
 {id:'higashi',n:'東本願寺前 スカイランタン',a:'京都駅周辺',d:[1],t:'京都駅のすぐ北の広場。ゴスペルの生演奏に合わせてランタンを空へ。雨の日は中止。',f:['12/25 19:30'],q:'東本願寺'},
 {id:'bamboo',n:'嵐山・竹林の小径',a:'嵯峨野・嵐山',d:[2],t:'朝いちばんに行くと人が少なくて、竹の音だけが聞こえる。',f:['無料','Day 2 8:30〜'],q:'竹林の小径'},
 {id:'togetsu',n:'渡月橋',a:'嵯峨野・嵐山',d:[2],t:'川沿いを散歩して、嵐山の商店街で食べ歩き。',f:['食べ歩き','Day 2 9:30〜'],q:'渡月橋'},
 {id:'eiga',n:'太秦映画村',a:'太秦',d:[2],t:'「江戸時代の京」の町並み。ナイト入村で夜の町を歩く。嵐電「撮影所前」から徒歩2分。',f:['ナイト券 2,000円','Day 2 17:00〜'],q:'太秦映画村'},
 {id:'nishiki',n:'錦市場',a:'四条河原町',d:[3],t:'約390mのアーケード。歩きながらは食べず、お店の前で。',f:['〜2,000円','Day 3 10:30〜'],q:'錦市場'}];
-const L={bamboo:[70,130,'r','竹林の小径'],togetsu:[100,200,'r','渡月橋'],eiga:[215,120,'r','太秦映画村'],nishiki:[318,222,'l','錦市場'],ponto:[392,168,'r','先斗町'],gion:[470,236,'r','八坂神社'],kiyo:[496,318,'r','清水寺'],higashi:[300,330,'l','東本願寺'],eki:[318,392,'r','京都駅'],inari:[430,500,'l','伏見稲荷']};
+const L={bamboo:[70,130,'r','竹林の小径'],togetsu:[100,200,'r','渡月橋'],eiga:[215,120,'r','太秦映画村'],nishiki:[318,222,'l','錦市場'],ponto:[392,168,'r','菊水'],gion:[470,236,'r','八坂神社'],kiyo:[496,318,'r','清水寺'],higashi:[300,330,'l','東本願寺'],eki:[318,392,'r','京都駅'],inari:[430,500,'l','伏見稲荷']};
 const AR=[['嵯峨野・嵐山',140,36],['太秦',230,62],['四条河原町',318,190],['祇園・東山',520,180],['京都駅周辺',268,456],['伏見',500,540]];
 const RT={1:['eki','inari','kiyo','gion','ponto','higashi'],2:['bamboo','togetsu','eiga'],3:['nishiki','eki']};
 let day=0,sel='inari';const fav=new Set();
@@ -722,14 +738,24 @@ $('listview').addEventListener('click',e=>{const c=e.target.closest('.lcard');if
 drawMap();drawDetail();drawList();syncFav(false);
 
 /* ---------- Dinner ---------- */
-const O=[['3,000〜4,000','先斗町のおばんざい・京町家の和食','鴨川のすぐそばの細い路地。農家野菜の「ふたご家」や、おばんざいの「もなか堂」あたりが予算内の候補。','先斗町の町家'],['6,600〜','少し背伸びして「祇園らんぶる」','現役のお茶屋の一角を使った町家の創作和食。坪庭が見えて雰囲気は一番。そのぶんコースは6,600円から。','祇園らんぶる']];
-$('opts').innerHTML=O.map((o,i)=>`<button class="opt" role="radio" aria-checked="false" data-i="${i}"><span class="ck" aria-hidden="true"><svg viewBox="0 0 20 20" width="16" height="16"><path d="M4 10.5l4 4 8-9"/></svg></span><span><span class="pr">${o[0]}<small style="font:400 16px var(--f-mincho);color:var(--c-muted)"> 円〜／人</small></span><h4>${o[1]}</h4><p>${o[2]}</p></span></button>`).join('');
-$('opts').addEventListener('click',e=>{const b=e.target.closest('.opt');if(!b)return;$('opts').querySelectorAll('.opt').forEach(o=>o.setAttribute('aria-checked',o==b));$('tkD').textContent=O[b.dataset.i][3];toast('ディナーは「'+O[b.dataset.i][3]+'」')});
+const O=[
+{n:'レストラン菊水',tag:'第1候補・洋食',pp:4000,pr:'3,000〜4,000',d:'四条大橋のたもと、1916年（大正5年）創業の洋食レストラン。建物は国の登録文化財で、大正ロマンのレトロな空間。ハンバーグ、ビーフカツレツ、エビフライなどの洋食を、スープ・サラダ・パン（ライス）・デザート付きの定食で。',pt:['洋食なので食べられるものが多い','歴史ある洋館で特別感、でも気取りすぎない','野菜が苦手でも肉・揚げ物メニューが選べる'],nt:'サービス料10%が別。夜に予約できるのはコースのみなので、25日に入れるか電話で確認する（075-561-1001）。',q:'レストラン菊水 京都'},
+{n:'東華菜館 本店',tag:'候補・中華',pp:4000,pr:'3,500〜4,500',d:'四条大橋の西のたもと、建築家ヴォーリズが手がけた1926年の洋館で食べる北京料理。日本最古級の手動エレベーターに乗って上の階へ。春巻・酢豚・エビ料理などを、ふたりで4〜5品頼んでシェア。',pt:['建物とエレベーターでデート感が強い','好きなものだけ頼めるので野菜を避けやすい','窓際は鴨川と東山が見える'],nt:'コースは高めなので一品料理で。予約は17:00〜20:30の枠（075-221-1147）。',q:'東華菜館 本店 京都'},
+{n:'グリルキャピタル東洋亭 ポルタ店',tag:'予備・京都駅',pp:2500,pr:'2,000〜3,000',d:'1897年創業の京都の老舗洋食。ホイルに包んだ「百年洋食ハンバーグ」と丸ごとトマトのサラダが名物。京都駅の地下街ポルタにあって、ランタン会場まで歩いて行ける。',pt:['ランタン会場まで徒歩圏','ハンバーグが名物で外さない','予算にいちばん余裕ができる'],nt:'行列ができやすいので早めの時間に。特別感はほかの2店より控えめ。',q:'グリルキャピタル東洋亭 ポルタ店'}];
+let dinner=0;
+queueMicrotask(()=>{$('pair').textContent=pairTxt();$('tkD').textContent=O[dinner].n});
+$('opts').innerHTML=O.map((o,i)=>`<div class="optw"><button class="opt" role="radio" aria-checked="${i==dinner}" data-i="${i}"><span class="ck" aria-hidden="true"><svg viewBox="0 0 20 20" width="16" height="16"><path d="M4 10.5l4 4 8-9"/></svg></span><span><span class="otag">${o.tag}</span><span class="pr">${o.pr}<small style="font:400 16px var(--f-mincho);color:var(--c-muted)"> 円／人</small></span><h4>${o.n}</h4><p>${o.d}</p><ul class="opts-pt">${o.pt.map(x=>`<li>${x}</li>`).join('')}</ul><p class="onote">${o.nt}</p></span></button><a class="omap" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(o.q)}" target="_blank" rel="noopener">Googleマップで見る ↗</a></div>`).join('');
+const pairTxt=()=>`ふたりで約${(O[dinner].pp*2).toLocaleString()}円（1万円以内）`;
+$('opts').addEventListener('click',e=>{const b=e.target.closest('.opt');if(!b)return;dinner=+b.dataset.i;$('opts').querySelectorAll('.opt').forEach(o=>o.setAttribute('aria-checked',o==b));$('tkD').textContent=O[dinner].n;$('pair').textContent=pairTxt();setDinnerBudget();toast('ディナーは「'+O[dinner].n+'」・'+pairTxt())});
 
 /* ---------- Budget（※仮の数値） ---------- */
 const B=[['記念日ディナー',4000],['ランチ×3',4500],['食べ歩き',3500],['映画村ナイト',2000],['電車・バス',2000],['清水寺',300],['カフェ・予備',1500]];
-const mx=Math.max(...B.map(x=>x[1]));$('total').dataset.count=B.reduce((a,x)=>a+x[1],0);
-$('brows').innerHTML=B.map((x,i)=>`<div class="brow"><span>${x[0]}</span><span class="t"><i style="--i:${i}" data-w="${(x[1]/mx*100).toFixed(1)}"></i></span><span class="v">${x[1].toLocaleString()}円</span></div>`).join('');
+B[0][1]=O[dinner].pp;
+const mx=4500;const sumB=()=>B.reduce((a,x)=>a+x[1],0);$('total').dataset.count=sumB();
+$('brows').innerHTML=B.map((x,i)=>`<div class="brow${i==0?' dn':''}"><span>${x[0]}${i==0?`<small class="dname">${O[dinner].n}</small>`:''}</span><span class="t"><i style="--i:${i}" data-w="${(x[1]/mx*100).toFixed(1)}"></i></span><span class="v"><span class="vn">${x[1].toLocaleString()}</span>円</span></div>`).join('');
+/* 選んだディナーで予算が変わる：数字は今の値から新しい値へ動く */
+const tweenNum=(el,to)=>{const from=+(el.textContent.replace(/[^0-9]/g,''))||0;if(RM||from===to){el.textContent=to.toLocaleString();return}const t0=performance.now();const fr=t=>{const p=Math.min(1,(t-t0)/700),e=1-Math.pow(1-p,3);el.textContent=Math.round(from+(to-from)*e).toLocaleString();if(p<1)requestAnimationFrame(fr)};requestAnimationFrame(fr)};
+const setDinnerBudget=()=>{B[0][1]=O[dinner].pp;const r=document.querySelector('.brow.dn');r.querySelector('.dname').textContent=O[dinner].n;const i=r.querySelector('i');i.dataset.w=(B[0][1]/mx*100).toFixed(1);if(i.style.width)i.style.width=i.dataset.w+'%';tweenNum(r.querySelector('.vn'),B[0][1]);$('total').dataset.count=sumB();tweenNum($('total'),sumB());r.classList.remove('flash');void r.offsetWidth;r.classList.add('flash')};
 
 /* ---------- Design system ---------- */
 const T=[['Primary','<i class="sw" style="background:#bc1616"></i>#BC1616（西山製麺の赤丸）'],['Secondary','<i class="sw" style="background:#dbc5a4"></i>#DBC5A4（ベージュ）'],['Background','<i class="sw" style="background:#111110"></i>#111110 ／ 白の面 #FFFFFF'],['Surface','<i class="sw" style="background:#1b1b19"></i>#1B1B19 ／ #404040'],['Text','#DBC5A4（11.28:1）／ 白の面 #333333（12.63:1）'],['Muted Text','#877F76（4.79:1）／ 白の面 #6B7480（4.74:1）'],['Border','rgba(135,129,118,.35) ／ #DFE6EB ／ スレート #5D6770'],['Font','Shippori Mincho・Italiana・Roboto・Zen Kaku Gothic New・Noto Sans JP'],['Display','タイトル 176px（字間0.2em）／ 横スクロール英字 240px'],['H1〜H6','80 / 40 / 32 / 24 / 18 / 14px'],['本文','16px・行間1.55・字間0.03em（説明文14px・行間1.8）'],['最大幅','1200px・左右余白 max(5vw,20px)'],['セクション間','96〜200px（画面幅に比例）'],['カードpadding','20〜32px'],['ボタン高さ','48px ／ 56px（最小44px）'],['ボーダー','1px'],['角丸','0px（面）／ 999px（ボタン）'],['影','0 24px 60px rgba(0,0,0,.45)'],['Breakpoint','600 / 900 / 1200px'],['Motion','150 / 300 / 600 / 1000ms、out cubic-bezier(.16,1,.3,1)・inout (.76,0,.24,1)・spring (.34,1.56,.64,1)']];
