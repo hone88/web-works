@@ -558,7 +558,7 @@ footer{background:var(--c-slate);color:#fff;font-family:var(--f-label);letter-sp
   <div>
     <p class="label">記念日の夜</p>
     <h2 class="dh" style="margin-top:12px" aria-label="100年の洋館で、少しいいごはんを。"><span class="dot" aria-hidden="true"></span><span aria-hidden="true"><span class="mask"><span>100年の洋館で、</span></span><span class="mask" style="--i:1"><span>少しいいごはんを。</span></span></span></h2>
-    <p class="body fade" style="--i:2;margin-top:32px;max-width:28em;font-size:14px;line-height:1.8">洋食が中心で、懐石みたいにかしこまらず、でも記念日らしい特別感がある店を選びました。ひとり3,000〜4,000円、ふたりで1万円以内が目安。食べたら東本願寺のランタンへ（タクシーで約15分）。選ぶと、下の予算も変わります。</p>
+    <p class="body fade" style="--i:2;margin-top:32px;max-width:28em;font-size:14px;line-height:1.8">洋食が中心で、懐石みたいにかしこまらず、でも記念日らしい特別感がある店を選びました。ひとり3,000〜4,000円が目安。食べたら東本願寺のランタンへ（タクシーで約15分）。選ぶと、下の予算も変わります。</p>
     <p class="pair fade" id="pair" aria-live="polite"></p>
   </div>
   <div class="opts fade" id="opts" role="radiogroup" aria-label="ディナーの候補"></div>
@@ -705,7 +705,7 @@ const S=[
 {id:'inari',n:'伏見稲荷大社',a:'伏見',d:[1],t:'千本鳥居。JR奈良線で京都駅から5分の稲荷駅すぐ。',f:['無料','Day 1 10:45〜'],q:'伏見稲荷大社'},
 {id:'kiyo',n:'清水寺',a:'祇園・東山',d:[1],t:'清水の舞台からの冬景色。帰りは二年坂・三年坂へ。',f:['拝観 300円','Day 1 14:00〜'],q:'清水寺'},
 {id:'gion',n:'八坂神社・花見小路',a:'祇園・東山',d:[1],t:'夕暮れの石畳がいちばんきれいな時間に歩く。',f:['無料','Day 1 16:00〜'],q:'八坂神社'},
-{id:'ponto',n:'レストラン菊水（ディナー）',a:'四条大橋',d:[1],t:'四条大橋のたもと、1916年創業の洋食レストラン。向かいには候補の東華菜館も。記念日の夜ごはんはここで。',f:['ひとり3,000〜4,000円','Day 1 17:00〜'],q:'レストラン菊水 京都'},
+{id:'ponto',n:'レストラン菊水（ディナー）',a:'四条大橋',d:[1],t:'四条大橋のたもと、1916年創業の洋食レストラン。記念日の夜ごはんはここで。',f:['ひとり3,000〜4,000円','Day 1 17:00〜'],q:'レストラン菊水 京都'},
 {id:'higashi',n:'東本願寺前 スカイランタン',a:'京都駅周辺',d:[1],t:'京都駅のすぐ北の広場。ゴスペルの生演奏に合わせてランタンを空へ。雨の日は中止。',f:['12/25 19:30'],q:'東本願寺'},
 {id:'bamboo',n:'嵐山・竹林の小径',a:'嵯峨野・嵐山',d:[2],t:'朝いちばんに行くと人が少なくて、竹の音だけが聞こえる。',f:['無料','Day 2 8:30〜'],q:'竹林の小径'},
 {id:'togetsu',n:'渡月橋',a:'嵯峨野・嵐山',d:[2],t:'川沿いを散歩して、嵐山の商店街で食べ歩き。',f:['食べ歩き','Day 2 9:30〜'],q:'渡月橋'},
@@ -740,12 +740,11 @@ drawMap();drawDetail();drawList();syncFav(false);
 /* ---------- Dinner ---------- */
 const O=[
 {n:'レストラン菊水',tag:'第1候補・洋食',pp:4000,pr:'3,000〜4,000',d:'四条大橋のたもと、1916年（大正5年）創業の洋食レストラン。建物は国の登録文化財で、大正ロマンのレトロな空間。ハンバーグ、ビーフカツレツ、エビフライなどの洋食を、スープ・サラダ・パン（ライス）・デザート付きの定食で。',pt:['洋食なので食べられるものが多い','歴史ある洋館で特別感、でも気取りすぎない','野菜が苦手でも肉・揚げ物メニューが選べる'],nt:'サービス料10%が別。夜に予約できるのはコースのみなので、25日に入れるか電話で確認する（075-561-1001）。',q:'レストラン菊水 京都'},
-{n:'東華菜館 本店',tag:'候補・中華',pp:4000,pr:'3,500〜4,500',d:'四条大橋の西のたもと、建築家ヴォーリズが手がけた1926年の洋館で食べる北京料理。日本最古級の手動エレベーターに乗って上の階へ。春巻・酢豚・エビ料理などを、ふたりで4〜5品頼んでシェア。',pt:['建物とエレベーターでデート感が強い','好きなものだけ頼めるので野菜を避けやすい','窓際は鴨川と東山が見える'],nt:'コースは高めなので一品料理で。予約は17:00〜20:30の枠（075-221-1147）。',q:'東華菜館 本店 京都'},
-{n:'グリルキャピタル東洋亭 ポルタ店',tag:'予備・京都駅',pp:2500,pr:'2,000〜3,000',d:'1897年創業の京都の老舗洋食。ホイルに包んだ「百年洋食ハンバーグ」と丸ごとトマトのサラダが名物。京都駅の地下街ポルタにあって、ランタン会場まで歩いて行ける。',pt:['ランタン会場まで徒歩圏','ハンバーグが名物で外さない','予算にいちばん余裕ができる'],nt:'行列ができやすいので早めの時間に。特別感はほかの2店より控えめ。',q:'グリルキャピタル東洋亭 ポルタ店'}];
+{n:'グリルキャピタル東洋亭 ポルタ店',tag:'予備・京都駅',pp:2500,pr:'2,000〜3,000',d:'1897年創業の京都の老舗洋食。ホイルに包んだ「百年洋食ハンバーグ」と丸ごとトマトのサラダが名物。京都駅の地下街ポルタにあって、ランタン会場まで歩いて行ける。',pt:['ランタン会場まで徒歩圏','ハンバーグが名物で外さない','予算にいちばん余裕ができる'],nt:'行列ができやすいので早めの時間に。特別感は菊水より控えめ。',q:'グリルキャピタル東洋亭 ポルタ店'}];
 let dinner=0;
 queueMicrotask(()=>{$('pair').textContent=pairTxt();$('tkD').textContent=O[dinner].n});
 $('opts').innerHTML=O.map((o,i)=>`<div class="optw"><button class="opt" role="radio" aria-checked="${i==dinner}" data-i="${i}"><span class="ck" aria-hidden="true"><svg viewBox="0 0 20 20" width="16" height="16"><path d="M4 10.5l4 4 8-9"/></svg></span><span><span class="otag">${o.tag}</span><span class="pr">${o.pr}<small style="font:400 16px var(--f-mincho);color:var(--c-muted)"> 円／人</small></span><h4>${o.n}</h4><p>${o.d}</p><ul class="opts-pt">${o.pt.map(x=>`<li>${x}</li>`).join('')}</ul><p class="onote">${o.nt}</p></span></button><a class="omap" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(o.q)}" target="_blank" rel="noopener">Googleマップで見る ↗</a></div>`).join('');
-const pairTxt=()=>`ふたりで約${(O[dinner].pp*2).toLocaleString()}円（1万円以内）`;
+const pairTxt=()=>`ふたりで約${(O[dinner].pp*2).toLocaleString()}円`;
 $('opts').addEventListener('click',e=>{const b=e.target.closest('.opt');if(!b)return;dinner=+b.dataset.i;$('opts').querySelectorAll('.opt').forEach(o=>o.setAttribute('aria-checked',o==b));$('tkD').textContent=O[dinner].n;$('pair').textContent=pairTxt();setDinnerBudget();toast('ディナーは「'+O[dinner].n+'」・'+pairTxt())});
 
 /* ---------- Budget（※仮の数値） ---------- */
@@ -762,7 +761,7 @@ const T=[['Primary','<i class="sw" style="background:#bc1616"></i>#BC1616（西�
 $('dst').innerHTML='<tbody>'+T.map(x=>`<tr><th scope="row">${x[0]}</th><td>${x[1]}</td></tr>`).join('')+'</tbody>';
 
 /* ---------- 13. カウントアップ ---------- */
-const countUp=el=>{const to=+el.dataset.count||0,pad=+el.dataset.pad||0;const fmt=v=>pad?String(v).padStart(pad,'0'):v.toLocaleString();if(RM){el.textContent=fmt(to);return}const t0=performance.now();const fr=t=>{const p=Math.min(1,(t-t0)/1400);el.textContent=fmt(Math.round(to*(1-Math.pow(1-p,4))));if(p<1)requestAnimationFrame(fr)};requestAnimationFrame(fr)};
+const countUp=el=>{const to=+el.dataset.count||0,pad=+el.dataset.pad||0;const fmt=v=>pad?String(v).padStart(pad,'0'):v.toLocaleString();if(RM){el.textContent=fmt(to);return}const t0=performance.now();const fr=t=>{const p=Math.min(1,(t-t0)/1400);el.textContent=fmt(Math.round((+el.dataset.count||0)*(1-Math.pow(1-p,4))));if(p<1)requestAnimationFrame(fr)};requestAnimationFrame(fr)};
 
 /* ---------- 表示のきっかけ ---------- */
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target;el.classList.add('in');
