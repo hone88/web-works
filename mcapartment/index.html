@@ -206,7 +206,13 @@ body.drawer-open{overflow:hidden}
 @media (min-width:960px){ .order{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);align-items:start} }
 .ask{background:var(--c-bg);border:1px solid var(--c-border);border-radius:var(--r-md);padding:var(--card-pad);display:grid;gap:14px}
 .ask label{font-family:var(--f-head);font-weight:700;font-size:18px}
-.ask input{font:inherit;font-size:17px;padding:12px 14px;border:1.5px solid var(--c-muted);border-radius:var(--r-sm);background:var(--c-bg);color:var(--c-text);width:100%;min-height:52px}
+.ask{min-width:0}
+.ask>*{min-width:0}
+.ask input{display:block;box-sizing:border-box;-webkit-appearance:none;appearance:none;font:inherit;font-size:17px;padding:12px 14px;border:1.5px solid var(--c-muted);border-radius:var(--r-sm);background:var(--c-bg);color:var(--c-text);width:100%;min-width:0;max-width:100%;min-height:52px;line-height:1.4}
+.ask input::-webkit-date-and-time-value{text-align:left;min-height:1.4em}
+.ask input::-webkit-calendar-picker-indicator{opacity:.7}
+.ask__hint{font-size:13px;color:var(--c-muted);margin-top:-6px}
+.order>*{min-width:0}
 .quick{display:flex;gap:8px;flex-wrap:wrap}
 .quick button{font:inherit;font-size:14px;font-weight:700;min-height:44px;padding:0 16px;border-radius:var(--r-pill);border:1.5px solid var(--c-border);background:var(--c-bg);color:var(--c-text);cursor:pointer}
 .quick button[aria-pressed="true"]{background:var(--c-text);color:var(--c-bg);border-color:var(--c-text)}
@@ -423,7 +429,8 @@ body.drawer-open{overflow:hidden}
       <div class="order">
         <div class="ask">
           <label for="pickDate">受け取りたい日</label>
-          <input type="date" id="pickDate">
+          <p class="ask__hint" id="pickHint">枠をタップすると、カレンダーから選べます</p>
+          <input type="date" id="pickDate" aria-describedby="pickHint">
           <div class="quick" role="group" aria-label="よく使う日にち">
             <button type="button" data-days="3" aria-pressed="false">3日後</button>
             <button type="button" data-days="7" aria-pressed="false">1週間後</button>
