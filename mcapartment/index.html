@@ -108,6 +108,8 @@ body.drawer-open{overflow:hidden}
 .fab a:hover{transform:translateY(-2px)}
 .fab svg{width:20px;height:20px;margin:0 auto 2px}
 .fab__line{background:#06C755;color:#FFFFFF}
+.fab{transition:opacity var(--d-base),transform var(--d-base) var(--e-out)}
+.fab.away{opacity:0;transform:translateY(20px);pointer-events:none}
 .fab__shop{background:var(--c-primary);color:var(--c-on-primary)}
 
 /* hero */
@@ -181,6 +183,23 @@ body.drawer-open{overflow:hidden}
 .plist td{text-align:right}
 .plist .tax{font-size:12px;color:var(--c-muted);margin-left:4px}
 .icing__note{display:grid;gap:4px;margin-top:14px}
+.qty{width:118px;padding-left:12px}
+.plist td.qty{text-align:right}
+.qty__b{width:36px;height:36px;border-radius:50%;border:1.5px solid var(--c-border);background:var(--c-bg);color:var(--c-text);font:inherit;font-size:18px;line-height:1;cursor:pointer;vertical-align:middle}
+.qty__b:hover{border-color:var(--c-text)}
+.qty__n{display:inline-block;min-width:28px;text-align:center;font-family:var(--f-en);font-weight:700;font-variant-numeric:tabular-nums;vertical-align:middle}
+.plist tr[data-on] th{color:var(--c-pink-ink)}
+.plist tfoot th,.plist tfoot td{border-bottom:0;border-top:2px solid var(--c-text);font-weight:700;padding-top:14px}
+.plist tfoot td{font-size:22px}
+.plist tfoot td.bump{animation:bump .35s var(--e-out)}
+@keyframes bump{40%{transform:scale(1.08)}}
+.icing__hint{font-size:13.5px;color:var(--c-muted);margin-top:10px}
+@media (max-width:520px){ .plist th{font-size:14px} .qty{width:108px;padding-left:6px} .qty__b{width:34px;height:34px} }
+.draft{background:var(--c-bg);border:1.5px dashed var(--c-border);border-radius:var(--r-md);padding:14px 16px;display:grid;gap:6px}
+.draft__label{font-size:12.5px;color:var(--c-muted);font-weight:700}
+.draft__text{margin:0;font-family:var(--f-body);font-size:14.5px;line-height:1.8;white-space:pre-wrap;overflow-wrap:anywhere}
+.map{margin-top:18px;border-radius:var(--r-md);overflow:hidden;border:1px solid var(--c-border);aspect-ratio:16/10;background:var(--c-surface)}
+.map iframe{width:100%;height:100%;border:0;display:block}
 
 /* order chooser */
 .order{display:grid;gap:24px}
@@ -378,21 +397,23 @@ body.drawer-open{overflow:hidden}
           <table class="plist">
             <caption>定番アイシングクッキー（税込）</caption>
             <tbody>
-              <tr><th scope="row">ほし・ハート・お花・りぼん</th><td class="price">各508円</td></tr>
-              <tr><th scope="row">はっぱ</th><td class="price">550円</td></tr>
-              <tr><th scope="row">くま（大）</th><td class="price">605円</td></tr>
-              <tr><th scope="row">くま（小）・スワン</th><td class="price">各508円</td></tr>
-              <tr><th scope="row">男の子・女の子</th><td class="price">各702円</td></tr>
-              <tr><th scope="row">赤ちゃん</th><td class="price">551円</td></tr>
-              <tr><th scope="row">ナンバー</th><td class="price">302円</td></tr>
-              <tr><th scope="row">プレート</th><td class="price">400円</td></tr>
-              <tr><th scope="row">ベースなしプレート</th><td class="price">205円</td></tr>
+              <tr data-name="ほし・ハート・お花・りぼん" data-price="508"><th scope="row">ほし・ハート・お花・りぼん</th><td class="price">各508円</td><td class="qty"><button type="button" class="qty__b" data-op="-1" aria-label="ほし・ハート・お花・りぼんを1枚減らす">−</button><output class="qty__n" aria-label="ほし・ハート・お花・りぼんの枚数">0</output><button type="button" class="qty__b" data-op="1" aria-label="ほし・ハート・お花・りぼんを1枚増やす">＋</button></td></tr>
+              <tr data-name="はっぱ" data-price="550"><th scope="row">はっぱ</th><td class="price">550円</td><td class="qty"><button type="button" class="qty__b" data-op="-1" aria-label="はっぱを1枚減らす">−</button><output class="qty__n" aria-label="はっぱの枚数">0</output><button type="button" class="qty__b" data-op="1" aria-label="はっぱを1枚増やす">＋</button></td></tr>
+              <tr data-name="くま（大）" data-price="605"><th scope="row">くま（大）</th><td class="price">605円</td><td class="qty"><button type="button" class="qty__b" data-op="-1" aria-label="くま（大）を1枚減らす">−</button><output class="qty__n" aria-label="くま（大）の枚数">0</output><button type="button" class="qty__b" data-op="1" aria-label="くま（大）を1枚増やす">＋</button></td></tr>
+              <tr data-name="くま（小）・スワン" data-price="508"><th scope="row">くま（小）・スワン</th><td class="price">各508円</td><td class="qty"><button type="button" class="qty__b" data-op="-1" aria-label="くま（小）・スワンを1枚減らす">−</button><output class="qty__n" aria-label="くま（小）・スワンの枚数">0</output><button type="button" class="qty__b" data-op="1" aria-label="くま（小）・スワンを1枚増やす">＋</button></td></tr>
+              <tr data-name="男の子・女の子" data-price="702"><th scope="row">男の子・女の子</th><td class="price">各702円</td><td class="qty"><button type="button" class="qty__b" data-op="-1" aria-label="男の子・女の子を1枚減らす">−</button><output class="qty__n" aria-label="男の子・女の子の枚数">0</output><button type="button" class="qty__b" data-op="1" aria-label="男の子・女の子を1枚増やす">＋</button></td></tr>
+              <tr data-name="赤ちゃん" data-price="551"><th scope="row">赤ちゃん</th><td class="price">551円</td><td class="qty"><button type="button" class="qty__b" data-op="-1" aria-label="赤ちゃんを1枚減らす">−</button><output class="qty__n" aria-label="赤ちゃんの枚数">0</output><button type="button" class="qty__b" data-op="1" aria-label="赤ちゃんを1枚増やす">＋</button></td></tr>
+              <tr data-name="ナンバー" data-price="302"><th scope="row">ナンバー</th><td class="price">302円</td><td class="qty"><button type="button" class="qty__b" data-op="-1" aria-label="ナンバーを1枚減らす">−</button><output class="qty__n" aria-label="ナンバーの枚数">0</output><button type="button" class="qty__b" data-op="1" aria-label="ナンバーを1枚増やす">＋</button></td></tr>
+              <tr data-name="プレート" data-price="400"><th scope="row">プレート</th><td class="price">400円</td><td class="qty"><button type="button" class="qty__b" data-op="-1" aria-label="プレートを1枚減らす">−</button><output class="qty__n" aria-label="プレートの枚数">0</output><button type="button" class="qty__b" data-op="1" aria-label="プレートを1枚増やす">＋</button></td></tr>
+              <tr data-name="ベースなしプレート" data-price="205"><th scope="row">ベースなしプレート</th><td class="price">205円</td><td class="qty"><button type="button" class="qty__b" data-op="-1" aria-label="ベースなしプレートを1枚減らす">−</button><output class="qty__n" aria-label="ベースなしプレートの枚数">0</output><button type="button" class="qty__b" data-op="1" aria-label="ベースなしプレートを1枚増やす">＋</button></td></tr>
             </tbody>
+            <tfoot><tr><th scope="row">合計（目安）</th><td class="price" colspan="2" id="icingTotal" aria-live="polite">0円</td></tr></tfoot>
           </table>
+          <p class="icing__hint" id="icingHint">＋を押すと、合計の目安が出ます。選んだ内容は、下の「ご予約・オーダー」のLINE文面にも入ります。</p>
           <div class="icing__note"><p class="note">日持ちは作ってから約1か月。オーダーのアイシングクッキーも同じです。</p><p class="note">価格は公式サイトの掲載をもとにしています。</p></div>
         </div>
       </div>
-      <aside class="memo" aria-label="提案のポイント"><b>提案のポイント｜アイシングクッキー</b><p>写真は横にスワイプして見られるようにして、価格は1つの表にまとめました。同じ価格のものはまとめて、スマホでも縦に長くなりすぎないようにしています。</p></aside>
+      <aside class="memo" aria-label="提案のポイント"><b>提案のポイント｜アイシングクッキー</b><p>写真は横にスワイプして見られるようにして、価格は1つの表にまとめました。＋−で枚数を選ぶと合計の目安が出るので、「くま2枚とナンバー2枚でいくら？」という問い合わせを、お客さんが自分で確かめられます。</p></aside>
     </div>
   </section>
 
@@ -418,14 +439,15 @@ body.drawer-open{overflow:hidden}
           </ol>
           <div class="order__how">
             <p class="note">店頭に在庫があれば、直前のご予約に対応できることもあります。まずはLINEでご相談ください。</p>
+            <div class="draft" id="draftBox" hidden><p class="draft__label">LINEに送る文面（送る前に書き直せます）</p><pre class="draft__text" id="draftText"></pre></div>
             <div class="btn-row">
-              <a class="btn btn--line" href="https://page.line.me/mcapartment" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s6-3.5 8.2-6C21.4 14.4 22 12.8 22 11c0-4.4-4.5-8-10-8z"/></svg>LINEで予約・相談</a>
+              <a class="btn btn--line" id="orderLine" href="https://page.line.me/mcapartment" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s6-3.5 8.2-6C21.4 14.4 22 12.8 22 11c0-4.4-4.5-8-10-8z"/></svg>LINEで予約・相談</a>
               <a class="btn btn--ghost" href="https://mcapartment.thebase.in/" target="_blank" rel="noopener">オンラインショップ</a>
             </div>
           </div>
         </div>
       </div>
-      <aside class="memo" aria-label="提案のポイント"><b>提案のポイント｜ご予約・オーダー</b><p>今のサイトではオーダーの説明が3つのページに分かれています。お客さんが本当に知りたいのは「その日に間に合うか」なので、日にちを選ぶだけで、間に合うオーダーに✓が付くようにしました。そのままLINEで予約できます。</p></aside>
+      <aside class="memo" aria-label="提案のポイント"><b>提案のポイント｜ご予約・オーダー</b><p>今のサイトではオーダーの説明が3つのページに分かれています。お客さんが本当に知りたいのは「その日に間に合うか」なので、日にちを選ぶだけで、間に合うオーダーに✓が付くようにしました。ボタンを押すと、受け取り日と選んだアイシングクッキーが入った文面でLINEが開くので、お店側も「いつ・何を」がすぐ分かります。</p></aside>
     </div>
   </section>
 
@@ -466,6 +488,7 @@ body.drawer-open{overflow:hidden}
           <tr><th scope="row">お支払い</th><td>現金・PayPay・一部クレジットカード</td></tr>
           <tr><th scope="row">お電話</th><td><span class="price">082-530-4210</span></td></tr>
         </table>
+        <div class="map"><iframe title="MC apartmentの地図（Googleマップ）" src="https://maps.google.com/maps?q=%E5%BA%83%E5%B3%B6%E7%9C%8C%E5%BA%83%E5%B3%B6%E5%B8%82%E4%BD%90%E4%BC%AF%E5%8C%BA%E4%BA%94%E6%97%A5%E5%B8%822%E4%B8%81%E7%9B%AE9-24&amp;z=17&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
         <div class="yearend" id="yearEnd"><b>年末年始のお休み</b><p>12/27（日）、12/30（水）〜1/7（木）はお休み。12/28（月）・12/29（火）は営業します。</p></div>
       </div>
     </div>
@@ -508,7 +531,7 @@ body.drawer-open{overflow:hidden}
   <p>このページはご提案用のお試し版です。掲載している情報と写真は、MC apartmentさまの公式サイト・公式LINE・公開されているクチコミをもとにしています。</p>
 </div></footer>
 
-<div class="fab" aria-label="すぐに使うボタン">
+<div class="fab" id="fab" aria-label="すぐに使うボタン">
   <a class="fab__line" href="https://page.line.me/mcapartment" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s6-3.5 8.2-6C21.4 14.4 22 12.8 22 11c0-4.4-4.5-8-10-8z"/></svg>LINE</a>
   <a class="fab__shop" href="https://mcapartment.thebase.in/" target="_blank" rel="noopener">Online<br>Shop</a>
 </div>
@@ -559,6 +582,37 @@ body.drawer-open{overflow:hidden}
   }
   input.addEventListener('change',judge);input.addEventListener('input',judge);
   quick.forEach(function(b){b.addEventListener('click',function(){input.value=addDays(+b.dataset.days);judge()})});
+
+  // アイシングクッキーの見積もり
+  var rows=[].slice.call(document.querySelectorAll('.plist tbody tr')),totalEl=document.getElementById('icingTotal');
+  var yen=function(n){return n.toLocaleString('ja-JP')+'円'};
+  function picks(){return rows.map(function(r){return {n:r.dataset.name,p:+r.dataset.price,q:+r.querySelector('.qty__n').value}}).filter(function(x){return x.q>0})}
+  function updIcing(){var sum=0;picks().forEach(function(x){sum+=x.p*x.q});totalEl.textContent=yen(sum);
+    rows.forEach(function(r){var q=+r.querySelector('.qty__n').value;if(q)r.setAttribute('data-on','');else r.removeAttribute('data-on')});
+    totalEl.classList.remove('bump');void totalEl.offsetWidth;totalEl.classList.add('bump');draft();}
+  rows.forEach(function(r){var out=r.querySelector('.qty__n');out.value=0;
+    [].forEach.call(r.querySelectorAll('.qty__b'),function(b){b.addEventListener('click',function(){var v=Math.max(0,Math.min(99,(+out.value)+(+b.dataset.op)));out.value=v;out.textContent=v;updIcing()})})});
+
+  // LINEの文面
+  var lineBtn=document.getElementById('orderLine'),draftBox=document.getElementById('draftBox'),draftText=document.getElementById('draftText');
+  function draft(){
+    var lines=['MC apartmentさま',''],d=input.value,pk=picks();
+    if(!d&&!pk.length){draftBox.hidden=true;lineBtn.href='https://page.line.me/mcapartment';return}
+    if(d){var dt=new Date(toDate(d));lines.push((dt.getUTCMonth()+1)+'月'+dt.getUTCDate()+'日（'+'日月火水木金土'[dt.getUTCDay()]+'）受け取りで、オーダーの相談です。');
+      var ok=plans.filter(function(p){return p.getAttribute('data-state')==='ok'}).map(function(p){return p.querySelector('h3').textContent});
+      if(ok.length)lines.push('（間に合いそうなオーダー：'+ok.join('、')+'）');}
+    else lines.push('オーダーの相談です。');
+    if(pk.length){var sum=0;lines.push('','【アイシングクッキー】');pk.forEach(function(x){sum+=x.p*x.q;lines.push('・'+x.n+' ×'+x.q)});lines.push('合計の目安：'+yen(sum));}
+    lines.push('','よろしくお願いします。');
+    var text=lines.join('\n');draftText.textContent=text;draftBox.hidden=false;
+    lineBtn.href='https://line.me/R/oaMessage/@mcapartment/?'+encodeURIComponent(text);
+  }
+  input.addEventListener('change',draft);quick.forEach(function(b){b.addEventListener('click',draft)});
+
+  // 自前のLINEボタンがある場所では、右下のボタンを隠して重なりを防ぐ
+  var fab=document.getElementById('fab');
+  if('IntersectionObserver' in window){var seen=new Set();var fo=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)seen.add(e.target);else seen.delete(e.target)});fab.classList.toggle('away',seen.size>0)},{threshold:0});
+    ['.plist','#order','.cta','#access'].forEach(function(q){var el=document.querySelector(q);if(el)fo.observe(el)})}
 
   // 日持ちのバー
   var sl=document.getElementById('shelfList');
