@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>旅のしおり　冬の京都、ふたりで</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600&family=Italiana&family=Zen+Kaku+Gothic+New:wght@400;500&family=Roboto:wght@300&display=swap">
+<style>
+:root{--bg:#111110;--sf:#1b1b19;--tx:#dbc5a4;--sub:#b9a98f;--mu:#8a8277;--red:#bc1616;--ln:rgba(219,197,164,.24);--min:'Shippori Mincho',serif;--en:Italiana,serif}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--tx);font-family:'Zen Kaku Gothic New',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--tx)}
+button{font:inherit;color:inherit}
+.deck{position:fixed;inset:0;display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}
+.deck::-webkit-scrollbar{display:none}
+.pg{flex:none;width:100vw;height:100%;scroll-snap-align:start;scroll-snap-stop:always;overflow-y:auto;-webkit-overflow-scrolling:touch}
+.in{max-width:460px;margin:0 auto;padding:64px 24px 120px;display:flex;flex-direction:column;gap:26px}
+.k{margin:0;font-family:var(--en);font-size:14px;letter-spacing:.3em;color:var(--mu)}
+h2{margin:6px 0 0;font:600 30px/1.4 var(--min);letter-spacing:.05em}
+.lead{margin:0;font-size:13px;line-height:1.85;color:var(--sub)}
+.sec{border-top:1px solid var(--ln);padding-top:20px;display:flex;flex-direction:column;gap:10px}
+.lab{margin:0;font-size:12px;letter-spacing:.2em;color:var(--mu)}
+.big{margin:0;font:22px/1.45 var(--min)}
+.pills{display:flex;gap:10px;flex-wrap:wrap}
+.pill{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border:1px solid var(--tx);border-radius:999px;font-size:13px;text-decoration:none}
+.pill:active{background:var(--tx);color:var(--bg)}
+.box{margin:0;background:var(--sf);padding:14px 16px;font-size:12.5px;line-height:1.85;color:var(--sub)}
+/* cover */
+.cover{position:relative;min-height:100%;display:flex;flex-direction:column;justify-content:flex-end;max-width:460px;margin:0 auto;padding:56px 28px 130px;overflow:hidden}
+.cover svg{position:absolute;left:50%;top:5%;opacity:.8;width:min(100%,420px);transform:translateX(-50%)}
+.cover h1{margin:0;font:600 46px/1.3 var(--min);letter-spacing:.06em;position:relative}
+.cover .d{margin:16px 0 0;font:22px var(--min);letter-spacing:.08em;position:relative}
+.cover .r{display:flex;justify-content:space-between;margin-top:22px;padding-top:18px;border-top:1px solid var(--ln);font-size:13px;line-height:1.7;color:var(--sub);position:relative}
+.hint{position:relative;margin-top:28px;font-size:12px;letter-spacing:.2em;color:var(--mu);display:flex;align-items:center;gap:10px}
+.hint i{display:block;width:40px;height:1px;background:var(--mu);animation:h 1.6s ease-in-out infinite}
+@keyframes h{50%{transform:translateX(10px)}}
+/* trains */
+.tr{display:flex;gap:16px;align-items:baseline}
+.tr .w{flex:none;width:58px;font:13px/1.5 var(--min)}
+.tr b{display:block;font:400 26px var(--min)}
+.tr span{font-size:13px;color:var(--sub)}
+/* steps */
+.steps{list-style:none;margin:0;padding:0}
+.st{display:grid;grid-template-columns:58px 1fr;gap:14px;padding:16px 0;border-top:1px solid var(--ln)}
+.st .t{font:20px/1.3 var(--min)}
+.st h3{margin:0 0 6px;font:400 17px/1.5 var(--min);display:flex;gap:8px;align-items:center}
+.st h3 .dot{width:8px;height:8px;border-radius:50%;background:var(--red);flex:none}
+.st p{margin:0;font-size:13px;line-height:1.75;color:var(--sub)}
+.st a{display:inline-flex;align-items:center;gap:10px;min-height:44px;font-size:12px;letter-spacing:.15em;text-decoration:none}
+.st a::after{content:"";width:28px;height:1px;background:var(--tx)}
+/* checklist */
+.bar{display:flex;align-items:center;gap:12px}
+.bar .t{flex:1;height:4px;background:#2a2926}
+.bar .t i{display:block;height:4px;width:0;background:var(--red);transition:width .4s cubic-bezier(.16,1,.3,1)}
+.bar b{font:400 18px var(--min);min-width:56px;text-align:right}
+.ck{display:flex;align-items:center;gap:14px;width:100%;min-height:58px;padding:10px 0;background:none;border:0;border-top:1px solid var(--ln);text-align:left;cursor:pointer}
+.ck .b{flex:none;width:24px;height:24px;border:1px solid var(--tx);display:grid;place-items:center;transition:background .2s}
+.ck .b svg{opacity:0;transition:opacity .2s}
+.ck[aria-pressed=true] .b{background:var(--tx)}
+.ck[aria-pressed=true] .b svg{opacity:1}
+.ck[aria-pressed=true] .n{opacity:.45;text-decoration:line-through}
+.ck .n{display:flex;flex-direction:column;gap:2px;font-size:15px}
+.ck small{font-size:12px;color:#a89a84}
+/* budget */
+.total{margin:0;font:300 72px/1 Roboto,sans-serif}
+.total small{font:20px var(--min);margin-left:6px}
+.br{display:grid;grid-template-columns:110px 1fr 72px;gap:12px;align-items:center;min-height:44px;border-top:1px solid var(--ln);font-size:13px}
+.br .t{height:2px;background:#2a2926}.br .t i{display:block;height:2px;background:var(--tx)}
+.br .v{text-align:right;font-size:14px}
+/* memo */
+.ph{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ph div{aspect-ratio:1;border:1px dashed rgba(219,197,164,.45);display:grid;place-items:center;font-size:12px;color:var(--mu)}
+.q label{display:block;font:17px var(--min);margin-bottom:8px}
+.q textarea{width:100%;min-height:84px;resize:vertical;background:transparent;border:0;border-bottom:1px solid rgba(219,197,164,.35);color:var(--tx);font:15px/36px 'Zen Kaku Gothic New',sans-serif;background-image:repeating-linear-gradient(transparent 0 35px,rgba(219,197,164,.18) 35px 36px);padding:0;outline:none}
+.q textarea:focus{border-bottom-color:var(--tx)}
+.end{display:flex;justify-content:center;align-items:center;gap:12px;font:15px var(--min);letter-spacing:.1em;padding-top:10px}
+.end i{width:10px;height:10px;border-radius:50%;background:var(--red)}
+/* nav */
+.nav{position:fixed;left:0;right:0;bottom:0;padding:12px 16px calc(12px + env(safe-area-inset-bottom));display:flex;align-items:center;justify-content:space-between;gap:8px;background:linear-gradient(transparent,rgba(17,17,16,.92) 35%);pointer-events:none}
+.nav>*{pointer-events:auto}
+.arw{width:48px;height:48px;border-radius:50%;border:1px solid rgba(219,197,164,.5);background:rgba(17,17,16,.7);display:grid;place-items:center;cursor:pointer}
+.arw:disabled{opacity:.25;cursor:default}
+.tabs{display:flex;gap:0;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;min-width:32px;height:44px;padding:0 3px;border:0;background:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;font-size:10px;letter-spacing:0;color:var(--mu)}
+.tab i{width:6px;height:6px;border-radius:50%;background:rgba(219,197,164,.3);transition:all .3s}
+.tab[aria-current=true]{color:var(--tx)}
+.tab[aria-current=true] i{width:18px;border-radius:3px;background:var(--red)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.deck{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<main class="deck" id="deck" aria-label="旅のしおり（横にスワイプしてページをめくる）">
+
+<section class="pg" aria-label="表紙"><div class="cover">
+<svg viewBox="0 0 390 420" aria-hidden="true"><g fill="none" stroke="#dbc5a4" stroke-width="1" opacity=".35"><path d="M40 120Q195 96 350 120M60 146H330M92 124V420M298 124V420"/><path d="M88 190Q195 172 302 190M100 210H290M124 194V420M266 194V420"/><path d="M122 250Q195 238 268 250M132 266H258M150 254V420M240 254V420"/><path d="M148 296Q195 288 242 296M156 308H234M168 300V420M222 300V420"/></g><circle cx="300" cy="60" r="30" fill="#bc1616"/></svg>
+<p class="k" style="position:relative;margin-bottom:16px">WINTER IN KYOTO ／ 旅のしおり</p>
+<h1>冬の京都、<br>ふたりで。</h1>
+<p class="d">2026.12.26 土 — 12.27 日</p>
+<div class="r"><span>広島 → 京都<br>1泊2日・記念日の旅</span><span style="text-align:right">伏見・東山・河原町<br>嵐山・太秦</span></div>
+<p class="hint">横にスワイプしてめくる <i></i></p>
+</div></section>
+
+<section class="pg" aria-label="予約と連絡先"><div class="in">
+<div><p class="k">01 — RESERVATION</p><h2>予約と連絡先</h2></div>
+<div class="sec"><p class="lab">新幹線</p>
+<div class="tr"><span class="w">行き<br>12/26 土</span><div><b>8:53 → 10:29</b><span>のぞみ118号　広島 → 京都</span></div></div>
+<div class="tr"><span class="w">帰り<br>12/27 日</span><div><b>19:02 → 20:42</b><span>のぞみ51号　京都 → 広島</span></div></div>
+<p class="box">並び席・禁煙で希望中。JTBが発売日（行き11/26・帰り11/27）に手配して、結果をメールで知らせてくれる。取れなかったら期限までに列車を選び直す。</p></div>
+<div class="sec"><p class="lab">ホテル</p><p class="big">hotel tou nishinotoin kyoto</p>
+<p class="lead">京都市下京区西洞院町455<br>京都駅（烏丸中央口）から歩いて約10分<br>ツイン1室・素泊まり・大浴場あり<br>チェックイン 15:00〜24:00 ／ アウト 11:00</p>
+<div class="pills"><a class="pill" href="tel:0757440144">075-744-0144</a><a class="pill" href="https://www.google.com/maps/search/?api=1&query=hotel%20tou%20nishinotoin%20kyoto" target="_blank" rel="noopener">地図を開く</a></div></div>
+<div class="sec"><p class="lab">記念日ディナー</p><p class="big">フォーチュンガーデン京都</p>
+<p class="lead">12/26 土 17:30〜（土日は17:00から・L.O. 20:30）<br>地下鉄「京都市役所前」16番出口から徒歩1分<br>ひとり〜6,000円めやす・サービス料10%別</p>
+<div class="pills"><a class="pill" href="tel:0752548843">075-254-8843</a><a class="pill" href="https://restaurant.ikyu.com/101786" target="_blank" rel="noopener">予約ページ</a></div></div>
+<div class="sec"><p class="lab">JTB（新幹線＋ホテルのセット）</p>
+<p class="lead">旅行代金 83,400円（ふたり分・カード払い）<br>宿泊税は別で、ホテルで払う<br>問い合わせ：JTB HTA販売センター（10:00〜18:00）</p>
+<div class="pills"><a class="pill" href="tel:05033118158">050-3311-8158</a></div></div>
+</div></section>
+
+<section class="pg" aria-label="Day 1"><div class="in">
+<div><p class="k">02 — DAY 1 ／ 12.26 SAT</p><h2>鳥居と坂道と、<br>タワーの夜景。</h2></div>
+<p class="lead">着いたらすぐ南の伏見へ。夕方は東山から錦市場を歩いて、夜はディナーと夜景。</p>
+<ol class="steps" data-day="1"></ol>
+<p class="lead" style="color:var(--mu)">赤い点は、この日のいちばんの楽しみ。</p>
+</div></section>
+
+<section class="pg" aria-label="Day 2"><div class="in">
+<div><p class="k">03 — DAY 2 ／ 12.27 SUN</p><h2>竹林の朝と、<br>江戸の町。</h2></div>
+<p class="lead">朝いちばんの嵐山は人が少なくて静か。午後は映画村で、灯りがともるまで。</p>
+<ol class="steps" data-day="2"></ol>
+</div></section>
+
+<section class="pg" aria-label="持ち物"><div class="in">
+<div><p class="k">04 — CHECKLIST</p><h2>持ち物</h2></div>
+<div class="bar"><span class="t"><i id="pbar"></i></span><b id="pnum">0 / 0</b></div>
+<div id="items"></div>
+<p class="lead" style="color:var(--mu)">タップでチェック。閉じても残ります。12月の京都は朝晩とくに冷えるので、防寒は多めに。</p>
+</div></section>
+
+<section class="pg" aria-label="予算"><div class="in">
+<div><p class="k">05 — BUDGET</p><h2>予算とお金のメモ</h2></div>
+<div><p class="lab">現地で使うお金（ひとり）</p><p class="total">18,700<small>円</small></p><p class="lead" style="margin-top:8px">ふたりで約37,400円。ほかにJTBのセット 83,400円（支払い済み）。</p></div>
+<div id="brows"></div>
+<p class="box">・清水寺500円、映画村2,800円、京都タワー900円は調べた料金。ほかはめやす。<br>・ディナーはサービス料10%が別。<br>・宿泊税はホテルで払う。<br>・食べ歩きは現金だけのお店もあるので、千円札を多めに。</p>
+</div></section>
+
+<section class="pg" aria-label="ふたりの思い出"><div class="in">
+<div><p class="k">06 — MEMORIES</p><h2>ふたりの思い出</h2></div>
+<p class="lead">旅のあとに、ふたりで書き込むページ。書いたことはこのスマホに残ります。</p>
+<div class="ph"><div>いちばんの写真</div><div>ふたりの写真</div></div>
+<div id="memo" style="display:flex;flex-direction:column;gap:26px"></div>
+<p class="end"><i></i>また、ふたりで来よう。</p>
+</div></section>
+</main>
+
+<nav class="nav" aria-label="ページ">
+<button class="arw" id="prev" aria-label="前のページ"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M11 3 5 9l6 6" fill="none" stroke="#dbc5a4" stroke-width="1.5"/></svg></button>
+<div class="tabs" id="tabs"></div>
+<button class="arw" id="next" aria-label="次のページ"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="m7 3 6 6-6 6" fill="none" stroke="#dbc5a4" stroke-width="1.5"/></svg></button>
+</nav>
+
+<script>
+const $=id=>document.getElementById(id);
+const S={get(k,d){try{const v=localStorage.getItem(k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+const map=q=>'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(q);
+const DAYS={1:[
+['8:53','広島駅からのぞみで京都へ','のぞみ118号。駅でコーヒーを買って乗る。','広島駅'],
+['10:29','京都着・荷物を駅のロッカーへ','ホテルは駅から歩いて10分。荷物は夜に取りに行く。','京都駅'],
+['11:00','伏見稲荷大社・千本鳥居','JR奈良線で稲荷駅へ（約5分）。上まで登らず、四ツ辻あたりで引き返す。お参りは無料。','伏見稲荷大社'],
+['12:30','参道でお昼','稲荷寿司やきつねうどんで軽めに。','伏見稲荷大社 表参道'],
+['14:00','清水寺から二年坂・三年坂へ','清水の舞台からの冬景色。拝観500円。坂道でおだんごを、お店の前で。','清水寺'],
+['16:00','八坂神社・祇園 花見小路','夕暮れの石畳を歩く。','花見小路通 祇園 京都'],
+['16:45','錦市場をのぞく','ディナー前なので、だし巻きをひと口くらい。歩きながらは食べない。ここから店まで歩いて15分ほど。','錦市場 京都'],
+['17:30','記念日ディナー','フォーチュンガーデン京都。昭和2年の洋館を使ったビストロ・フレンチ。','フォーチュンガーデン京都',1],
+['19:45','京都タワーで夜景','地下鉄で京都駅へ（約10分）。地上100mの展望室、大人900円。最終入場20:30。','ニデック京都タワー',1],
+['20:45','荷物を受け取ってホテルへ','hotel tou nishinotoin kyoto。大浴場でゆっくり。','hotel tou nishinotoin kyoto']],
+2:[
+['8:00','チェックアウト・荷物を駅のロッカーへ','京都駅からJR嵯峨野線で嵯峨嵐山へ（約15分）。','京都駅'],
+['8:45','嵐山・竹林の小径','朝のうちに歩くと、竹の音だけが聞こえる。','竹林の小径 嵯峨野 京都'],
+['9:45','渡月橋・嵐山の商店街','川沿いを散歩して、コロッケやみたらしで食べ歩き。','渡月橋 京都'],
+['12:00','嵐山でお昼','そばや定食で。','嵐山 商店街 京都'],
+['13:15','嵐電で太秦へ','一両だけのレトロな路面電車。太秦広隆寺前で降りる。','嵐電 嵐山駅'],
+['13:30','太秦映画村','1日券2,800円。「江戸時代の京」の町並みを歩いて、17時ごろ灯りがともるまで。','太秦映画村',1],
+['17:45','京都駅で荷物とおみやげ','JRで太秦から京都駅へ。駅弁も買っておく。','京都駅'],
+['19:02','のぞみで広島へ','のぞみ51号。20:42に広島着。おつかれさま。','京都駅']]};
+document.querySelectorAll('.steps').forEach(ol=>{ol.innerHTML=DAYS[ol.dataset.day].map(s=>`<li class="st"><span class="t">${s[0]}</span><div><h3>${s[4]?'<span class="dot" aria-hidden="true"></span>':''}${s[1]}</h3><p>${s[2]}</p><a href="${map(s[3])}" target="_blank" rel="noopener">MAP を開く</a></div></li>`).join('')});
+
+const IT=[['新幹線のきっぷ','受け取り方はJTBのメールで確認'],['スマホ・充電器','しおりと地図はスマホで見る'],['モバイルバッテリー','地図を開きっぱなしでも安心'],['財布・現金すこし','錦市場や食べ歩きは現金のお店も'],['ICカード（ICOCAなど）','電車・嵐電・地下鉄・バス'],['着替え（1日分）',''],['パジャマ・部屋着',''],['歩きやすい靴','伏見稲荷と清水の坂道を歩く'],['ディナー用のきれいめな服','洋館のビストロなので少しだけ'],['マフラー・手袋・カイロ','朝の嵐山と夜のタワーは冷える'],['折りたたみ傘',''],['常備薬・ばんそうこう',''],['エコバッグ','おみやげ用'],['記念日のプレゼント','忘れずに']];
+let on=S.get('shiori-ck',{});
+const ck='<svg width="14" height="14" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="#111110" stroke-width="2.4"/></svg>';
+$('items').innerHTML=IT.map((x,i)=>`<button class="ck" data-i="${i}" aria-pressed="${!!on[i]}"><span class="b">${ck}</span><span class="n">${x[0]}${x[1]?`<small>${x[1]}</small>`:''}</span></button>`).join('');
+const prog=()=>{const d=IT.filter((_,i)=>on[i]).length;$('pnum').textContent=d+' / '+IT.length;$('pbar').style.width=d/IT.length*100+'%'};prog();
+$('items').addEventListener('click',e=>{const b=e.target.closest('.ck');if(!b)return;const i=b.dataset.i;on[i]=!on[i];b.setAttribute('aria-pressed',!!on[i]);S.set('shiori-ck',on);prog()});
+
+const B=[['記念日ディナー',6000],['ランチ×2',3000],['食べ歩き',3000],['映画村 1日券',2800],['電車・バス',1500],['京都タワー',900],['清水寺',500],['カフェ・予備',1000]];
+$('brows').innerHTML=B.map(b=>`<div class="br"><span>${b[0]}</span><span class="t"><i style="width:${b[1]/6000*100}%"></i></span><span class="v">${b[1].toLocaleString()}円</span></div>`).join('');
+
+const Q=['いちばん楽しかったこと','いちばんおいしかったもの','笑ったこと','次に京都に来たら行きたいところ','ひとことメッセージ'];
+const memo=S.get('shiori-memo',{});
+$('memo').innerHTML=Q.map((q,i)=>`<div class="q"><label for="m${i}">${q}</label><textarea id="m${i}" data-i="${i}" rows="2"></textarea></div>`).join('');
+$('memo').querySelectorAll('textarea').forEach(t=>{t.value=memo[t.dataset.i]||'';t.addEventListener('input',()=>{memo[t.dataset.i]=t.value;S.set('shiori-memo',memo)})});
+
+/* pages */
+const deck=$('deck'),pages=[...deck.children],names=['表紙','予約','Day1','Day2','持ち物','予算','思い出'];
+$('tabs').innerHTML=names.map((n,i)=>`<button class="tab" data-i="${i}" aria-label="${pages[i].getAttribute('aria-label')}"><i></i>${n}</button>`).join('');
+const tabs=[...$('tabs').children];
+let cur=0;
+const go=i=>{i=Math.max(0,Math.min(pages.length-1,i));deck.scrollTo({left:i*deck.clientWidth,behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'})};
+const mark=()=>{const i=Math.round(deck.scrollLeft/deck.clientWidth);if(i===cur&&tabs[i].getAttribute('aria-current')==='true')return;cur=i;tabs.forEach((t,j)=>t.setAttribute('aria-current',j===i));$('prev').disabled=i===0;$('next').disabled=i===pages.length-1;tabs[i].scrollIntoView({inline:'nearest',block:'nearest'});S.set('shiori-pg',i)};
+deck.addEventListener('scroll',()=>requestAnimationFrame(mark),{passive:true});
+$('prev').onclick=()=>go(cur-1);$('next').onclick=()=>go(cur+1);
+$('tabs').addEventListener('click',e=>{const t=e.target.closest('.tab');if(t)go(+t.dataset.i)});
+document.addEventListener('keydown',e=>{if(e.target.tagName==='TEXTAREA')return;if(e.key==='ArrowRight')go(cur+1);if(e.key==='ArrowLeft')go(cur-1)});
+addEventListener('resize',()=>deck.scrollTo({left:cur*deck.clientWidth}));
+const start=S.get('shiori-pg',0);requestAnimationFrame(()=>{deck.scrollTo({left:start*deck.clientWidth});mark()});
+</script>
+</body>
+</html>
